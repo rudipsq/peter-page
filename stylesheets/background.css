@@ -1,0 +1,107 @@
+/* - - - FOREGROUND - - - */
+#foreground {
+  width: 100vw;
+  height: 100vh;
+
+  top: 0;
+
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#light {
+  position: fixed;
+  height: 400%;
+
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    var(--c-accent),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+
+  transition: opacity 0.8s ease, width 0.8s ease;
+}
+
+.light-beam {
+  width: 1300px;
+  opacity: 0.3;
+}
+
+.light-off {
+  width: 0;
+  opacity: 0;
+}
+
+/* - - - BACKGROUND - - - */
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+
+  overflow: hidden;
+
+  z-index: -1;
+}
+
+#background #background-dark {
+  position: absolute;
+  z-index: -6;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: black;
+  opacity: 0.25;
+}
+
+#background #background-blur {
+  position: absolute;
+  z-index: -7;
+
+  height: 100%;
+  width: 100%;
+
+  backdrop-filter: blur(4px);
+}
+
+#background #background-vignette {
+  position: absolute;
+  z-index: -8;
+
+  height: 100%;
+  width: 100%;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.87) 100%
+  );
+}
+
+#background #background-color {
+  position: absolute;
+  z-index: -9;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--c-accent);
+  opacity: 0.25;
+}
+
+#background img {
+  position: absolute;
+  z-index: -10;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  height: 100%;
+}

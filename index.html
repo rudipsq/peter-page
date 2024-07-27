@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peter Page</title>
+
+    <link rel="stylesheet" href="stylesheets/global.css" />
+    <link rel="stylesheet" href="stylesheets/background.css" />
+    <link rel="stylesheet" href="stylesheets/outline.css" />
+    <link rel="stylesheet" href="stylesheets/index.css" />
+  </head>
+  <body>
+    <div id="menuwrap">
+      <div id="wrapBackground"></div>
+    </div>
+    <div id="menubar">
+      <div id="menuLine" class="line">
+        <div class="backLine1"></div>
+        <div class="backLine2"></div>
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line-text">
+          <nav>
+            <a href="./index.html">
+              <div><img src="./img/icon/home.svg" aria-hidden="true" /></div>
+              <p>Home</p>
+            </a>
+            <a href="./familiengeschichte.html">
+              <div><img src="./img/icon/tree.svg" aria-hidden="true" /></div>
+              <p>Familiengeschichte</p>
+            </a>
+            <a href="./arbeit.html">
+              <div>
+                <img
+                  src="./img/icon/book.svg"
+                  aria-hidden="true"
+                  style="height: 26px; padding-right: 1px"
+                />
+              </div>
+              <p>Arbeit & Archiv</p>
+            </a>
+            <a href="mailto:example@example.com">
+              <div>
+                <img
+                  src="./img/icon/mail.svg"
+                  aria-hidden="true"
+                  style="width: 26px"
+                />
+              </div>
+              <p>Kontakt</p>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div id="foreground">
+      <div class="marquee">
+        <div class="marquee_blur" aria-hidden="true">
+          <p class="marquee_text">Peter Peusquens</p>
+        </div>
+        <div class="marquee_clear">
+          <p class="marquee_text">Peter Peusquens</p>
+        </div>
+      </div>
+
+      <div id="image">
+        <!-- <img src="./img/pic/table.png" /> -->
+      </div>
+
+      <div id="light" class="light-beam light-off"></div>
+    </div>
+
+    <div id="background">
+      <div id="background-dark"></div>
+      <div id="background-blur"></div>
+      <div id="background-vignette"></div>
+      <div id="background-color"></div>
+      <img src="img/pic/background.jpeg" />
+    </div>
+
+    <script src="scripts/global.js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+:root {
+  --base-line-offset: 12px;
+  --base-line-style: rgba(255, 255, 255, 0.4) 1px solid;
+  --base-line-backcolor: rgba(0, 0, 0, 0);
+  --base-line-backdrop: blur(10px);
+}
+
+/* main {
+  padding: 40px;
+  height: calc(100vh - 80px);
+  width: calc(100vw - 80px);
+} */
+
+.line {
+  position: relative;
+  /* 
+  width: 400px;
+  height: 180px; */
+}
+
+.backLine1 {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - var(--base-line-offset));
+
+  top: calc(var(--base-line-offset) / 2);
+
+  background-color: var(--base-line-backcolor);
+  backdrop-filter: var(--base-line-backdrop);
+}
+
+.backLine2 {
+  position: absolute;
+  width: calc(100% - var(--base-line-offset));
+  height: 100%;
+
+  left: calc(var(--base-line-offset) / 2);
+
+  background-color: var(--base-line-backcolor);
+  backdrop-filter: var(--base-line-backdrop);
+}
+
+.line1 {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - var(--base-line-offset));
+
+  top: calc(var(--base-line-offset) / 2);
+
+  outline: var(--base-line-style);
+}
+
+.line2 {
+  position: absolute;
+  width: calc(100% - var(--base-line-offset));
+  height: 100%;
+
+  left: calc(var(--base-line-offset) / 2);
+
+  outline: var(--base-line-style);
+}
+
+.line-text {
+  position: relative;
+  /* width: calc(100% - var(--base-line-offset) * 3);
+  height: calc(100% - var(--base-line-offset) * 3);
+  margin: calc(var(--base-line-offset) * 1.5); */
+
+  padding: calc(var(--base-line-offset) * 1.5);
+
+  overflow: hidden;
+}
