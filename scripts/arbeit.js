@@ -40,6 +40,7 @@ document.addEventListener("mousemove", (e) => {
 
   if (isCursorOver) {
     updateArchiveId(e.target);
+
     enableElement(flyingDiv);
   } else {
     disableElement(flyingDiv);
@@ -93,17 +94,53 @@ function updateArchiveId(element) {
     currentElement.parentElement &&
     currentElement.parentElement.id == "tableBody"
   ) {
-    const currentId = currentElement.getAttribute("data-id");
-
-    currentArchiveId = currentId;
-    // console.log(currentId);
+    currentArchiveId = currentElement.getAttribute("data-id");
+    scrollImg();
   }
 }
 
+function scrollImg() {
+  // change width of flying div
+  const slide = document.querySelectorAll(
+    `li[data-id="${currentArchiveId}"]`
+  )[0];
+  const image = slide.querySelector(":first-child");
+  const width = image.clientWidth;
+
+  const div = document.getElementById("flying-div");
+  div.style.width = width + "px";
+
+  // scroll to image
+  const container = document.getElementById("slides");
+  let totalWidth = calculateTotalWidth(container, slide);
+  container.style.translate = "-" + totalWidth + "px 0";
+}
+
+function calculateTotalWidth(parentElement, childElement) {
+  const children = parentElement.children;
+  let upToChildNumber;
+
+  for (let i = 0; i < children.length; i++) {
+    if (children[i] === childElement) {
+      upToChildNumber = i;
+    }
+  }
+
+  let sum = 0;
+  let count = 0;
+
+  for (let i = 0; i < children.length && count < upToChildNumber; i++) {
+    sum += children[i].offsetWidth;
+    count++;
+  }
+
+  return sum;
+}
+
 //*
-//* - - - - - fill table
+//* - - - - - setup table
 //*
-fillTable();
+setupTable();
 
 async function getJson() {
   try {
@@ -118,13 +155,14 @@ async function getJson() {
   }
 }
 
-async function fillTable() {
+async function setupTable() {
   const json = await getJson();
   // console.log(json);
 
   Object.keys(json).forEach((key) => {
     const element = json[key];
     buildTableRow(key, element.name, element.category, element.year);
+    addImage(key);
   });
 }
 
@@ -151,4 +189,21 @@ function buildTableRow(archiveId, title = "-", category = "-", year = "-") {
   rowDiv.appendChild(col3);
 
   table.appendChild(rowDiv);
+}
+
+function addImage(archiveId) {
+  const slides = document.getElementById("slides");
+
+  // create elements
+  let container = document.createElement("li");
+  let image = document.createElement("img");
+
+  container.setAttribute("data-id", archiveId);
+  image.src = "./img/pic/archiv/" + archiveId + ".jpg";
+  // image.src =
+  //   "https://img.freepik.com/premium-vector/image-placeholder-pictogram_764382-15451.jpg?size=626&ext=jpg";
+
+  // append children
+  container.appendChild(image);
+  slides.appendChild(container);
 }

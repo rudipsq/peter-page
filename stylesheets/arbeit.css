@@ -103,18 +103,47 @@
 /* ARCHIV hover images */
 #flying-div {
   position: fixed;
-  width: 50px;
-  height: 50px;
-  background-color: #ff0000;
-  border-radius: 15px;
+  border-radius: 20px;
   pointer-events: none;
 
+  width: 300px; /* auto change this */
+  height: 400px;
+
   z-index: 100;
-  transform: translate(15px, 15px); /* Offset from cursor */
-  transition: opacity 0.2s ease, scale 0.2s ease;
+  transform: translate(15px, 15px);
+  transition: opacity 0.2s ease, scale 0.2s ease, transform 0.2s,
+    width 0.2s ease;
+
+  overflow: hidden;
 }
 
 .hide {
   opacity: 0;
-  scale: 0.3;
+  scale: 0.6;
+
+  transform: scale(0.5) translate(-21.43%, -21.43%);
+  transform-origin: top left;
+}
+
+#slides {
+  position: absolute;
+  translate: 0 0; /* auto change this */
+
+  transition: translate 0.5s ease;
+
+  display: flex;
+  flex-direction: row;
+
+  outline: solid rgb(0, 0, 0) 2px;
+}
+
+#slides li {
+  position: relative;
+
+  height: 400px;
+  list-style: none;
+}
+
+#slides li img {
+  height: 400px;
 }
