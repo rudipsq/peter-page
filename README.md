@@ -9,12 +9,10 @@
 # IDEEN
 
 - werke archiv: https://studiofables.com/fr/archives
-- double square border like image in random folder?
 
 # TODO
 
-- arbeit.html dynamic table
-- arbeit.html table animation
+- arbeit.html text
 - familiengeschichte.html text
 - index.html image
 - handy version ganz am ende
