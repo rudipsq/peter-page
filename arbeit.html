@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="stylesheets/outline.css" />
 
     <link rel="stylesheet" href="stylesheets/arbeit.css" />
+    <link rel="stylesheet" href="stylesheets/archiv.css" />
   </head>
   <body>
     <div id="menuwrap">
@@ -61,7 +62,15 @@
     </div>
 
     <main>
-      <section id="arbeit"></section>
+      <section id="arbeit">
+        <div class="arbeitContainer">
+          <div id="arbeitInfo"></div>
+        </div>
+        <div class="arbeitContainer">
+          <div id="arbeitListe"></div>
+        </div>
+      </section>
+
       <section id="archiv">
         <div id="table">
           <div id="tableHead">
@@ -88,7 +97,9 @@
       <img src="img/pic/background.jpeg" />
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="scripts/global.js"></script>
     <script src="scripts/arbeit.js"></script>
+    <script src="scripts/archiv.js"></script>
   </body>
 </html>
