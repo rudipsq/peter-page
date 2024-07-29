@@ -42,7 +42,7 @@
               </div>
               <p>Arbeit & Archiv</p>
             </a>
-            <a href="mailto:example@example.com">
+            <a href="mailto:kontakt@peterpeusquens.com">
               <div>
                 <img
                   src="./img/icon/mail.svg"
@@ -64,10 +64,40 @@
     <main>
       <section id="arbeit">
         <div class="arbeitContainer">
-          <div id="arbeitInfo"></div>
+          <div>
+            <img src="./img/icon/tree.svg" />
+            <h3>Arbeit</h3>
+          </div>
         </div>
         <div class="arbeitContainer">
-          <div id="arbeitListe"></div>
+          <div>
+            <img src="./img/icon/book.svg" />
+            <h3>Transkribierte Urkunden</h3>
+            <div class="arbeitListe">
+              <div id="arbeitListe1" style="display: block"></div>
+              <div id="arbeitListe2"></div>
+              <div id="arbeitListe3"></div>
+              <div id="arbeitListe4"></div>
+              <div id="arbeitListe5"></div>
+            </div>
+            <nav>
+              <button
+                class="active"
+                id="arbeitButton1"
+                onclick="showArbeitListe(1)"
+              >
+                Könige und Kaiser</button
+              ><button id="arbeitButton2" onclick="showArbeitListe(2)">
+                Papsturkunden</button
+              ><button id="arbeitButton3" onclick="showArbeitListe(3)">
+                Familiengeschichten</button
+              ><button id="arbeitButton4" onclick="showArbeitListe(4)">
+                test4</button
+              ><button id="arbeitButton5" onclick="showArbeitListe(5)">
+                test5
+              </button>
+            </nav>
+          </div>
         </div>
       </section>
 
