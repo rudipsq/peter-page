@@ -1,10 +1,6 @@
 # START PAGE CONTENT
 
-- regal mit ueberschrift als nav?
-- bild portrait und tisch in mitte unten
-- warme, dunkle farben: gold, orange, warm black, brown
-- seiten mit text
-- cleaner weisser text
+- bild portrait und tisch in mitte unte
 
 # IDEEN
 
