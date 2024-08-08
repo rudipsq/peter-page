@@ -13,36 +13,38 @@ async function fillBearbeiteteUrkundenListe() {
     return;
   }
 
+  let tabelle = { bezeichnung: 0, kategorie: 1, anzahl: 2 };
+
   data.slice(3).forEach((item) => {
-    if (item[0] != "") {
+    if (item[tabelle.bezeichnung] != "") {
       // tabelle reihe bauen
       const row = document.createElement("div");
       row.innerHTML = `
-      <p>${item[0]}</p>
-      <p>${item[3]}</p>
+      <p>${item[tabelle.bezeichnung]}</p>
+      <p>${item[tabelle.anzahl]}</p>
     `;
 
       let container;
 
       // element in kategorien sortieren
-      switch (item[2]) {
+      switch (item[tabelle.kategorie]) {
         case "Könige und Kaiser":
           container = document.getElementById("arbeitListe1");
           break;
 
-        case "Papsturkunde":
+        case "Papsturkunden":
           container = document.getElementById("arbeitListe2");
           break;
 
-        case "Familiengeschichten?":
+        case "Familiengeschichten":
           container = document.getElementById("arbeitListe3");
           break;
 
-        case "test4":
+        case "Ablassbriefe und Wappenverleihungen":
           container = document.getElementById("arbeitListe4");
           break;
 
-        case "test5":
+        case "?":
           container = document.getElementById("arbeitListe5");
           break;
 

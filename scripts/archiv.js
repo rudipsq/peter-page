@@ -177,9 +177,16 @@ async function setupTable() {
     return;
   }
 
+  let tabelle = { id: 0, bezeichnung: 1, kategorie: 2, anzahl: 3 };
+
   data.slice(3).forEach((item) => {
-    if (item[0] != "") {
-      buildTableRow(item[0], item[1], item[2], item[3]);
+    if (item[tabelle.id] != "") {
+      buildTableRow(
+        item[tabelle.id],
+        item[tabelle.bezeichnung],
+        item[tabelle.kategorie],
+        item[tabelle.anzahl]
+      );
 
       addImage(item[0]);
     }

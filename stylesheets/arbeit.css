@@ -90,6 +90,8 @@
 
 .arbeitListe > div {
   display: none;
+  overflow-y: auto;
+  max-height: 250px;
 }
 
 .arbeitListe > div > div {

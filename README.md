@@ -12,3 +12,8 @@
 - arbeit.html 1. text
 - familiengeschichte.html text
 - handy version ganz am ende
+
+# PDF TOOLS
+
+- word to PDFs: https://www.ilovepdf.com/word_to_pdf
+- merge PDF: https://www.ilovepdf.com/merge_pdf
