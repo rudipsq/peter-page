@@ -13,7 +13,7 @@
 }
 
 #arbeit .arbeitContainer {
-  width: 100%;
+  width: 50%;
 
   padding: 40px 40px 40px 0;
 
@@ -28,9 +28,8 @@
   margin: 0;
   padding: 30px;
 
-  /* width: 100%; */
-  width: 750px;
-  height: 70%;
+  width: 100%;
+  height: 50%;
 
   background-color: rgba(31, 22, 22, 0.5);
   backdrop-filter: blur(15px);
@@ -43,26 +42,19 @@
 }
 
 #arbeit .arbeitContainer img {
-  /* width: 100%; */
-  width: 32px;
+  width: 100%;
   height: 32px;
   margin-bottom: 16px;
-  /* text-align: center; */
-  text-align: left;
-
-  display: none;
+  text-align: center;
 }
 
-#arbeit .arbeitContainer h2 {
-  margin: 0;
+#arbeit .arbeitContainer h3 {
   margin-bottom: 24px;
-  /* text-align: center; */
-  text-align: left;
+  text-align: center;
 }
 
 /* button navigation */
 .arbeitContainer nav {
-  padding-top: 10px;
   margin-top: auto;
   flex-direction: row;
 }
@@ -94,46 +86,24 @@
 /* arbeit liste urkunden kategorien */
 .arbeitListe {
   width: 100%;
-  height: 100%;
-
-  overflow-y: auto;
 }
 
 .arbeitListe > div {
   display: none;
+  overflow-y: auto;
+  max-height: 250px;
 }
 
-/* Table Row */
 .arbeitListe > div > div {
   display: flex;
-  flex-direction: row-reverse;
-
-  color: rgba(255, 255, 255, 0.5);
-
-  transition: color 0.08s ease-out;
-}
-
-.arbeitListe > div > div:hover {
-  color: rgba(255, 255, 255, 0.8);
+  flex-direction: row;
+  margin-top: 8px;
 }
 
 .arbeitListe > div > div p {
   margin: 0;
+  color: rgba(255, 255, 255, 0.5);
   font-size: large;
-
-  padding: 4px 0 4px 0;
-  cursor: text;
-}
-
-.arbeitListe > div > div p:nth-child(2) {
-  text-align: right;
-  width: 35px;
-  margin: 0;
-  margin-right: 35px;
-}
-
-.arbeitListe > div > div p:nth-child(1) {
-  text-align: left;
 }
 
 .arbeitListe > div > div p:nth-child(1) {

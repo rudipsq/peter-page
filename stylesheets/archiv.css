@@ -1,3 +1,27 @@
+#archivButton {
+  position: fixed;
+  bottom: 30px;
+  left: calc(50%);
+  translate: -50%;
+
+  z-index: 0;
+
+  padding: 18px 26px;
+  border-radius: 50px;
+
+  color: white;
+  background-color: rgba(31, 22, 22, 0.5);
+  outline: 2px solid rgba(124, 124, 124, 0.15);
+
+  text-decoration: none;
+
+  transition: transform 0.12s ease;
+}
+
+#archivButton:hover {
+  transform: scale(1.05);
+}
+
 /* ARCHIV SECTION */
 #archiv {
   margin-top: 100vh;
