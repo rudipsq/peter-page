@@ -177,45 +177,105 @@ async function setupTable() {
     return;
   }
 
-  let tabelle = { id: 0, bezeichnung: 1, kategorie: 2, anzahl: 3 };
+  let tabelle = {
+    id: 0,
+    bezeichnung: 1,
+    kategorie: 2,
+    ort: 3,
+    jahr: 4,
+    monat: 5,
+    tag: 6,
+    originalDatum: 7,
+    archiv: 8,
+  };
 
   data.slice(3).forEach((item) => {
-    if (item[tabelle.id] != "") {
-      buildTableRow(
-        item[tabelle.id],
-        item[tabelle.bezeichnung],
-        item[tabelle.kategorie],
-        item[tabelle.anzahl]
-      );
+    // if (item[tabelle.id] != "") {
+    if (item[tabelle.kategorie] != "") {
+      if (item[tabelle.bezeichnung] != "") {
+        buildTableRow(
+          item[tabelle.id],
+          item[tabelle.bezeichnung],
+          item[tabelle.kategorie],
+          item[tabelle.jahr],
+          item[tabelle.monat],
+          item[tabelle.tag]
+        );
+      } else {
+        buildTableRow(
+          item[tabelle.id],
+          item[tabelle.ort] + ", " + item[tabelle.jahr],
+          item[tabelle.kategorie],
+          item[tabelle.jahr],
+          item[tabelle.monat],
+          item[tabelle.tag]
+        );
+      }
 
-      addImage(item[0]);
+      addImage(item[tabelle.id]);
     }
   });
 }
 
-function buildTableRow(archiveId, title = "-", category = "-", year = "-") {
+function buildTableRow(
+  archiveId,
+  title = "-",
+  category = "-",
+  year = "-",
+  month = "-",
+  day = "-"
+) {
   const table = document.getElementById("tableBody");
 
   // create elements
   let rowDiv = document.createElement("div");
 
-  let col1 = document.createElement("h3");
+  let col1 = document.createElement("a");
   let col2 = document.createElement("p");
   let col3 = document.createElement("p");
+  let col4 = document.createElement("p");
+  let col5 = document.createElement("p");
 
   // fill elements
-  col1.innerHTML = title;
+  let titleElement = document.createElement("h3");
+
+  titleElement.innerHTML = title;
   col2.innerHTML = category;
   col3.innerHTML = year;
+  col4.innerHTML = month.substring(0, 3);
+  col5.innerHTML = day;
 
   rowDiv.setAttribute("data-id", archiveId);
+  col1.appendChild(titleElement);
+  col1.href = buildTableRowLink(archiveId, category);
+  // col1.href = "./data/familiengeschichte/test_1.pdf";
 
   // append children
   rowDiv.appendChild(col1);
   rowDiv.appendChild(col2);
+  rowDiv.appendChild(col5);
+  rowDiv.appendChild(col4);
   rowDiv.appendChild(col3);
 
   table.appendChild(rowDiv);
+}
+
+function buildTableRowLink(archiveId, category) {
+  let type;
+
+  if (!archiveId || archiveId == "") {
+    return "./not_found.html";
+  }
+
+  if (category && category != "") {
+    type = category.toLowerCase();
+  } else {
+    return "./not_found.html";
+  }
+
+  let link = `./data/${type}/${archiveId}.pdf`;
+  console.log(link);
+  return link;
 }
 
 function addImage(archiveId) {

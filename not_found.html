@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="stylesheets/global.css" />
     <link rel="stylesheet" href="stylesheets/background.css" />
     <link rel="stylesheet" href="stylesheets/outline.css" />
-
-    <link rel="stylesheet" href="stylesheets/arbeit.css" />
-    <link rel="stylesheet" href="stylesheets/archiv.css" />
+    <link rel="stylesheet" href="stylesheets/not_found.css" />
   </head>
   <body>
     <div id="menuwrap">
@@ -57,67 +55,17 @@
       </div>
     </div>
 
-    <div id="flying-div" class="hide">
-      <ul id="slides"></ul>
-    </div>
-
     <main>
-      <section id="arbeit">
-        <!-- <div class="arbeitContainer">
+      <section id="not-found-section">
+        <div id="not-found-container">
           <div>
-            <img src="./img/icon/tree.svg" />
-            <h3>Arbeit</h3>
-          </div>
-        </div> -->
-        <div class="arbeitContainer">
-          <div>
-            <img src="./img/icon/book.svg" />
-            <h2>Anzahl Transkribierte Urkunden</h2>
-
+            <h2>Not Found.</h2>
             <div class="arbeitListe">
-              <div id="arbeitListe1" style="display: block"></div>
-              <div id="arbeitListe2"></div>
-              <div id="arbeitListe3"></div>
-              <div id="arbeitListe4"></div>
-              <div id="arbeitListe5"></div>
-            </div>
-            <nav>
-              <button
-                class="active"
-                id="arbeitButton1"
-                onclick="showArbeitListe(1)"
-              >
-                Könige und Kaiser</button
-              ><button id="arbeitButton2" onclick="showArbeitListe(2)">
-                Papsturkunden</button
-              ><button id="arbeitButton3" onclick="showArbeitListe(3)">
-                Familiengeschichten</button
-              ><button id="arbeitButton4" onclick="showArbeitListe(4)">
-                Ablassbriefe und Wappenverleihungen</button
-              ><button id="arbeitButton5" onclick="showArbeitListe(5)">
-                test5
-              </button>
-            </nav>
-          </div>
-        </div>
-      </section>
-
-      <a id="archivButton" href="#archiv">
-        <h3>Archiv</h3>
-      </a>
-
-      <section id="archiv">
-        <div id="table">
-          <div id="tableHead">
-            <div>
-              <p>TITEL</p>
-              <p>KATEGORIE</p>
-              <p></p>
-              <p></p>
-              <p>DATUM</p>
+              <p>Sorry, the item you are looking for was not found.</p>
             </div>
           </div>
-          <div id="tableBody"></div>
+
+          <button id="back-button" onclick="history.back()">Go Back</button>
         </div>
       </section>
     </main>
@@ -134,9 +82,6 @@
       <img src="img/pic/background.jpeg" />
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="scripts/global.js"></script>
-    <script src="scripts/arbeit.js"></script>
-    <script src="scripts/archiv.js"></script>
   </body>
 </html>

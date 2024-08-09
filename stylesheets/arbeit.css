@@ -29,7 +29,7 @@
   padding: 30px;
 
   /* width: 100%; */
-  width: 750px;
+  width: 700px;
   height: 70%;
 
   background-color: rgba(31, 22, 22, 0.5);
@@ -106,7 +106,7 @@
 /* Table Row */
 .arbeitListe > div > div {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
 
   color: rgba(255, 255, 255, 0.5);
 
@@ -125,17 +125,16 @@
   cursor: text;
 }
 
-.arbeitListe > div > div p:nth-child(2) {
+.arbeitListe > div > div p:nth-child(1) {
   text-align: right;
-  width: 35px;
-  margin: 0;
-  margin-right: 35px;
+  min-width: 35px;
 }
 
-.arbeitListe > div > div p:nth-child(1) {
+/* .arbeitListe > div > div p:nth-child(2) {
+  margin-left: 12px;
+} */
+
+.arbeitListe > div > div p:last-child {
   text-align: left;
-}
-
-.arbeitListe > div > div p:nth-child(1) {
-  margin-right: auto;
+  margin-left: 36px;
 }

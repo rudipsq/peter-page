@@ -13,16 +13,23 @@ async function fillBearbeiteteUrkundenListe() {
     return;
   }
 
-  let tabelle = { bezeichnung: 0, kategorie: 1, anzahl: 2 };
+  let tabelle = { bezeichnung: 0, kategorie: 1, anzahl: 2, blatt: 3 };
 
   data.slice(3).forEach((item) => {
     if (item[tabelle.bezeichnung] != "") {
       // tabelle reihe bauen
       const row = document.createElement("div");
-      row.innerHTML = `
-      <p>${item[tabelle.bezeichnung]}</p>
+
+      if (item[tabelle.blatt]) {
+        row.innerHTML = `
+      <p>${item[tabelle.blatt]}</p>
+      <p style="margin-left: 12px">Blatt</p>
+      <p>${item[tabelle.bezeichnung]}</p>`;
+      } else {
+        row.innerHTML = `
       <p>${item[tabelle.anzahl]}</p>
-    `;
+      <p>${item[tabelle.bezeichnung]}</p>`;
+      }
 
       let container;
 
@@ -52,7 +59,7 @@ async function fillBearbeiteteUrkundenListe() {
           break;
       }
 
-      console.log(container);
+      // console.log(container);
 
       container.appendChild(row);
     }

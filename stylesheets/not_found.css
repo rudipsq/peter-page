@@ -1,0 +1,64 @@
+#not-found-section {
+  min-height: 100vh;
+  width: 100%;
+
+  position: fixed;
+  z-index: -1;
+
+  padding-left: 122px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+#not-found-container {
+  width: 100%;
+
+  padding: 40px 40px 40px 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#not-found-container > div {
+  margin: 0;
+  padding: 40px;
+
+  background-color: rgba(31, 22, 22, 0.5);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+
+  outline: 2px solid rgba(124, 124, 124, 0.15);
+
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  margin-bottom: 18px;
+}
+
+#back-button {
+  position: absolute;
+  translate: 0 130px;
+
+  z-index: 0;
+
+  padding: 18px 26px;
+  border-radius: 50px;
+
+  color: white;
+  background-color: rgba(31, 22, 22, 0.5);
+  outline: 2px solid rgba(124, 124, 124, 0.15);
+  border: none;
+
+  cursor: pointer;
+
+  transition: transform 0.12s ease;
+}
+
+#back-button:hover {
+  transform: scale(1.05);
+}
