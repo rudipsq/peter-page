@@ -39,7 +39,7 @@ async function fillBearbeiteteUrkundenListe() {
           container = document.getElementById("arbeitListe1");
           break;
 
-        case "Papsturkunden":
+        case "Notarielle Urkunden":
           container = document.getElementById("arbeitListe2");
           break;
 
@@ -47,20 +47,13 @@ async function fillBearbeiteteUrkundenListe() {
           container = document.getElementById("arbeitListe3");
           break;
 
-        case "Ablassbriefe und Wappenverleihungen":
+        case "Kirchliche Urkunden und Wappenbriefe":
           container = document.getElementById("arbeitListe4");
-          break;
-
-        case "?":
-          container = document.getElementById("arbeitListe5");
           break;
 
         default:
           break;
       }
-
-      // console.log(container);
-
       container.appendChild(row);
     }
   });
@@ -69,7 +62,7 @@ async function fillBearbeiteteUrkundenListe() {
 function showArbeitListe(kategorie) {
   if (kategorie == null) return;
 
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 4; i++) {
     document.getElementById("arbeitListe" + i).style.display = "none";
     document.getElementById("arbeitButton" + i).classList.remove("active");
   }

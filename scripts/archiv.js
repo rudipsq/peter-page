@@ -192,25 +192,35 @@ async function setupTable() {
   data.slice(3).forEach((item) => {
     // if (item[tabelle.id] != "") {
     if (item[tabelle.kategorie] != "") {
-      if (item[tabelle.bezeichnung] != "") {
-        buildTableRow(
-          item[tabelle.id],
-          item[tabelle.bezeichnung],
-          item[tabelle.kategorie],
-          item[tabelle.jahr],
-          item[tabelle.monat],
-          item[tabelle.tag]
-        );
-      } else {
-        buildTableRow(
-          item[tabelle.id],
-          item[tabelle.ort] + ", " + item[tabelle.jahr],
-          item[tabelle.kategorie],
-          item[tabelle.jahr],
-          item[tabelle.monat],
-          item[tabelle.tag]
-        );
-      }
+      // if (item[tabelle.bezeichnung] != "") {
+      //   buildTableRow(
+      //     item[tabelle.id],
+      //     item[tabelle.bezeichnung],
+      //     item[tabelle.kategorie],
+      //     item[tabelle.jahr],
+      //     item[tabelle.monat],
+      //     item[tabelle.tag]
+      //   );
+      // } else {
+      //   buildTableRow(
+      //     item[tabelle.id],
+      //     item[tabelle.ort] + ", " + item[tabelle.jahr],
+      //     item[tabelle.kategorie],
+      //     item[tabelle.jahr],
+      //     item[tabelle.monat],
+      //     item[tabelle.tag]
+      //   );
+      // }
+
+      buildTableRow(
+        item[tabelle.id],
+        item[tabelle.bezeichnung],
+        item[tabelle.kategorie],
+        item[tabelle.jahr],
+        item[tabelle.monat],
+        item[tabelle.tag],
+        item[tabelle.ort]
+      );
 
       addImage(item[tabelle.id], item[tabelle.kategorie]);
     }
@@ -223,7 +233,8 @@ function buildTableRow(
   category = "-",
   year = "-",
   month = "-",
-  day = "-"
+  day = "-",
+  place = "-"
 ) {
   const table = document.getElementById("tableBody");
 
@@ -241,6 +252,7 @@ function buildTableRow(
 
   titleElement.innerHTML = title;
   col2.innerHTML = category;
+  // col2.innerHTML = place;
   col3.innerHTML = year;
   col4.innerHTML = month.substring(0, 3);
   col5.innerHTML = day;
