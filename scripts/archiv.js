@@ -212,7 +212,7 @@ async function setupTable() {
         );
       }
 
-      addImage(item[tabelle.id]);
+      addImage(item[tabelle.id], item[tabelle.kategorie]);
     }
   });
 }
@@ -247,8 +247,8 @@ function buildTableRow(
 
   rowDiv.setAttribute("data-id", archiveId);
   col1.appendChild(titleElement);
-  col1.href = buildTableRowLink(archiveId, category);
-  // col1.href = "./data/familiengeschichte/test_1.pdf";
+  col1.href = getLinkToPdf(archiveId, category);
+  col1.target = "_blank";
 
   // append children
   rowDiv.appendChild(col1);
@@ -260,25 +260,38 @@ function buildTableRow(
   table.appendChild(rowDiv);
 }
 
-function buildTableRowLink(archiveId, category) {
-  let type;
-
+function getLinkToPdf(archiveId, category) {
   if (!archiveId || archiveId == "") {
     return "./not_found.html";
   }
 
-  if (category && category != "") {
-    type = category.toLowerCase();
-  } else {
+  if (!category || category == "") {
     return "./not_found.html";
   }
 
-  let link = `./data/${type}/${archiveId}.pdf`;
-  console.log(link);
+  let type = category.toLowerCase();
+
+  let link = `./data/archiv/${type}/${archiveId}.pdf`;
   return link;
 }
 
-function addImage(archiveId) {
+function getLinkToImage(archiveId, category) {
+  if (!archiveId || archiveId == "") {
+    // return;
+    archiveId = "error";
+  }
+
+  if (!category || category == "") {
+    return;
+  }
+
+  let type = category.toLowerCase();
+
+  let link = `./img/archiv/${type}/${archiveId}.png`;
+  return link;
+}
+
+function addImage(archiveId, category) {
   const slides = document.getElementById("slides");
 
   // create elements
@@ -287,7 +300,7 @@ function addImage(archiveId) {
 
   container.setAttribute("data-id", archiveId);
   // todo: make work later
-  // image.src = "./img/pic/archiv/" + archiveId + ".jpg";
+  image.src = getLinkToImage(archiveId, category);
   // image.src =
   //   "https://img.freepik.com/premium-vector/image-placeholder-pictogram_764382-15451.jpg?size=626&ext=jpg";
 
