@@ -92,7 +92,9 @@ function updateArchiveId(element) {
   if (
     currentElement &&
     currentElement.parentElement &&
-    currentElement.parentElement.id == "tableBody"
+    (currentElement.parentElement.id == "tableCategory1" ||
+      currentElement.parentElement.id == "tableCategory2" ||
+      currentElement.parentElement.id == "tableCategory3")
   ) {
     currentArchiveId = currentElement.getAttribute("data-id");
     scrollImg();
@@ -142,33 +144,12 @@ function calculateTotalWidth(parentElement, childElement) {
 //*
 setupTable();
 
-// async function getJson() {
-//   try {
-//     let response = await fetch("data/arbeit.json");
-//     let jsonData = await response.json();
-//     const result = jsonData;
-
-//     return result;
-//   } catch (error) {
-//     console.error("Error fetching or parsing JSON:", error);
-//     return null;
-//   }
-// }
-
-// async function setupTable() {
-//   const json = await getJson();
-//   // console.log(json);
-
-//   Object.keys(json).forEach((key) => {
-//     const element = json[key];
-//     buildTableRow(key, element.name, element.category, element.year);
-//     addImage(key);
-//   });
-// }
-
 async function setupTable() {
+  // const googleSheetUrl =
+  //   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRVIgmmtpTzJ5Zse_dLA-mp1FHmnkasYJisZrEBKb0Bpu37TO173hqGJiJsM32L8LPQShAWvFVnswl9/pub?output=csv";
   const googleSheetUrl =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRVIgmmtpTzJ5Zse_dLA-mp1FHmnkasYJisZrEBKb0Bpu37TO173hqGJiJsM32L8LPQShAWvFVnswl9/pub?output=csv";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQYASdgJMRy6udLuHkgb7XaM4_WIX0ofU8l2W8z8NH_DopOt-KbOnXWCfO8tfs9Sh9pDOM7ApD82gGx/pub?output=csv";
+
   const data = await fetchGoogleSheet(googleSheetUrl);
 
   if (!data) {
@@ -190,28 +171,11 @@ async function setupTable() {
   };
 
   data.slice(3).forEach((item) => {
-    // if (item[tabelle.id] != "") {
-    if (item[tabelle.kategorie] != "") {
-      // if (item[tabelle.bezeichnung] != "") {
-      //   buildTableRow(
-      //     item[tabelle.id],
-      //     item[tabelle.bezeichnung],
-      //     item[tabelle.kategorie],
-      //     item[tabelle.jahr],
-      //     item[tabelle.monat],
-      //     item[tabelle.tag]
-      //   );
-      // } else {
-      //   buildTableRow(
-      //     item[tabelle.id],
-      //     item[tabelle.ort] + ", " + item[tabelle.jahr],
-      //     item[tabelle.kategorie],
-      //     item[tabelle.jahr],
-      //     item[tabelle.monat],
-      //     item[tabelle.tag]
-      //   );
-      // }
-
+    if (
+      item[tabelle.id] &&
+      !item[tabelle.id].includes("x") &&
+      item[tabelle.kategorie]
+    ) {
       buildTableRow(
         item[tabelle.id],
         item[tabelle.bezeichnung],
@@ -236,7 +200,24 @@ function buildTableRow(
   day = "-",
   place = "-"
 ) {
-  const table = document.getElementById("tableBody");
+  let table;
+
+  switch (category) {
+    case "Papsturkunden":
+      table = document.getElementById("tableCategory1");
+      break;
+
+    case "Kardinalablass":
+      table = document.getElementById("tableCategory2");
+      break;
+
+    case "Bischofablass":
+      table = document.getElementById("tableCategory3");
+      break;
+
+    default:
+      return;
+  }
 
   // create elements
   let rowDiv = document.createElement("div");
@@ -251,8 +232,8 @@ function buildTableRow(
   let titleElement = document.createElement("h3");
 
   titleElement.innerHTML = title;
-  col2.innerHTML = category;
-  // col2.innerHTML = place;
+  // col2.innerHTML = category;
+  col2.innerHTML = place;
   col3.innerHTML = year;
   col4.innerHTML = month.substring(0, 3);
   col5.innerHTML = day;
@@ -319,4 +300,16 @@ function addImage(archiveId, category) {
   // append children
   container.appendChild(image);
   slides.appendChild(container);
+}
+
+function showArchiveTable(kategorie) {
+  if (kategorie == null) return;
+
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById("tableCategory" + i).style.display = "none";
+    document.getElementById("tableButton" + i).classList.remove("active");
+  }
+
+  document.getElementById("tableCategory" + kategorie).style.display = "block";
+  document.getElementById("tableButton" + kategorie).classList.add("active");
 }

@@ -54,13 +54,15 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-#tableHead div {
+#tableHead > div {
   display: flex;
   flex-direction: row;
 
-  padding-top: 60px;
+  padding-top: 50px;
 
   font-size: large;
+
+  height: 100%;
 }
 
 #tableBody div > *,
@@ -77,8 +79,44 @@
 }
 
 /* ARCHIV table head columns */
-#tableHead div p:nth-child(1) {
+#tableHead #tableTitle {
+  padding: 0;
   margin-right: auto;
+
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+#tableHead #tableTitle button {
+  height: 100%;
+
+  font-size: large;
+
+  border: none;
+  border-radius: 5px;
+
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(31, 22, 22, 0.5);
+  /* outline: 2px solid rgba(124, 124, 124, 0.15); */
+
+  cursor: pointer;
+
+  padding-top: 2px;
+
+  /* margin: 0 3px 0 3px; */
+
+  transition: outline 0.18s ease-out;
+}
+
+#tableHead #tableTitle button:hover {
+  /* outline: 2px solid rgba(124, 124, 124, 0.7); */
+}
+
+#tableHead #tableTitle button.active {
+  /* outline: 2px solid rgba(124, 124, 124, 0.7); */
+  text-decoration: 2px underline;
+  text-underline-offset: 3px;
 }
 
 #tableHead div p:nth-child(2) {
@@ -98,14 +136,15 @@
 }
 
 /* ARCHIV table body columns */
-#tableBody {
+#tableBody div {
+  display: none;
 }
 
-#tableBody div:nth-child(1) {
+#tableBody div div:nth-child(1) {
   border-top: none;
 }
 
-#tableBody div {
+#tableBody div div {
   height: 70px;
 
   border-top: 1px solid rgba(255, 255, 255, 0.5);
@@ -115,30 +154,30 @@
 }
 
 /* ARCHIV table body columns */
-#tableBody div a:nth-child(1) {
+#tableBody div div a:nth-child(1) {
   color: white;
   margin-right: auto;
 
   text-decoration: none;
 }
 
-#tableBody div a:nth-child(1):hover {
+#tableBody div div a:nth-child(1):hover {
   text-decoration: underline white 2px;
 }
 
-#tableBody div p:nth-child(2) {
+#tableBody div div p:nth-child(2) {
   width: 350px;
 }
 
-#tableBody div p:nth-child(3) {
+#tableBody div div p:nth-child(3) {
   min-width: 80px;
 }
 
-#tableBody div p:nth-child(4) {
+#tableBody div div p:nth-child(4) {
   min-width: 50px;
 }
 
-#tableBody div p:nth-child(5) {
+#tableBody div div p:nth-child(5) {
   min-width: 60px;
 }
 
