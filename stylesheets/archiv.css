@@ -96,31 +96,25 @@
   border: none;
   border-radius: 5px;
 
-  color: rgba(255, 255, 255, 0.5);
+  /* color: rgba(255, 255, 255, 0.5); */
+  color: white;
   background-color: rgba(31, 22, 22, 0.5);
-  /* outline: 2px solid rgba(124, 124, 124, 0.15); */
 
   cursor: pointer;
 
   padding-top: 2px;
-
-  /* margin: 0 3px 0 3px; */
-
-  transition: outline 0.18s ease-out;
 }
 
 #tableHead #tableTitle button:hover {
-  /* outline: 2px solid rgba(124, 124, 124, 0.7); */
 }
 
 #tableHead #tableTitle button.active {
-  /* outline: 2px solid rgba(124, 124, 124, 0.7); */
   text-decoration: 2px underline;
   text-underline-offset: 3px;
 }
 
 #tableHead div p:nth-child(2) {
-  width: 350px;
+  width: 250px;
 }
 
 #tableHead div p:nth-child(3) {
@@ -136,6 +130,10 @@
 }
 
 /* ARCHIV table body columns */
+#tableBody {
+  padding-bottom: 400px;
+}
+
 #tableBody div {
   display: none;
 }
@@ -155,8 +153,10 @@
 
 /* ARCHIV table body columns */
 #tableBody div div a:nth-child(1) {
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   margin-right: auto;
+
+  font-weight: bold;
 
   text-decoration: none;
 }
@@ -166,7 +166,7 @@
 }
 
 #tableBody div div p:nth-child(2) {
-  width: 350px;
+  width: 250px;
 }
 
 #tableBody div div p:nth-child(3) {
@@ -206,11 +206,11 @@
   transform-origin: top left;
 }
 
-#slides {
+#flying-div ul {
   position: absolute;
   translate: 0 0; /* auto change this */
 
-  transition: translate 0.5s ease;
+  transition: translate 0.3s ease;
 
   display: flex;
   flex-direction: row;
@@ -218,13 +218,13 @@
   /* outline: solid rgb(0, 0, 0) 2px; */
 }
 
-#slides li {
+#flying-div ul li {
   position: relative;
 
   height: 400px;
   list-style: none;
 }
 
-#slides li img {
+#flying-div ul li img {
   height: 400px;
 }

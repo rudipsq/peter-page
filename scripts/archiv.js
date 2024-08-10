@@ -11,6 +11,7 @@ let targetY = 0;
 let animationFrameId = null;
 
 let currentArchiveId = null;
+let currentArchiveCategory = 1;
 
 // cursor over table body
 const tableBody = document.getElementById("tableBody");
@@ -79,6 +80,7 @@ document.addEventListener("mouseleave", () => {
 });
 
 function updateArchiveId(element) {
+  // console.log("updated id", element);
   let currentElement;
   if (element.nodeName === "DIV") {
     currentElement = element;
@@ -89,13 +91,7 @@ function updateArchiveId(element) {
 
   if (currentElement.getAttribute("data-id") == currentArchiveId) return;
 
-  if (
-    currentElement &&
-    currentElement.parentElement &&
-    (currentElement.parentElement.id == "tableCategory1" ||
-      currentElement.parentElement.id == "tableCategory2" ||
-      currentElement.parentElement.id == "tableCategory3")
-  ) {
+  if (currentElement && currentElement.getAttribute("data-id")) {
     currentArchiveId = currentElement.getAttribute("data-id");
     scrollImg();
   }
@@ -113,7 +109,7 @@ function scrollImg() {
   div.style.width = width + "px";
 
   // scroll to image
-  const container = document.getElementById("slides");
+  const container = document.getElementById("slides" + currentArchiveCategory);
   let totalWidth = calculateTotalWidth(container, slide);
   container.style.translate = "-" + totalWidth + "px 0";
 }
@@ -231,7 +227,8 @@ function buildTableRow(
   // fill elements
   let titleElement = document.createElement("h3");
 
-  titleElement.innerHTML = title;
+  col1.innerHTML = title;
+  // titleElement.innerHTML = title;
   // col2.innerHTML = category;
   col2.innerHTML = place;
   col3.innerHTML = year;
@@ -239,12 +236,13 @@ function buildTableRow(
   col5.innerHTML = day;
 
   rowDiv.setAttribute("data-id", archiveId);
-  col1.appendChild(titleElement);
+  // col1.appendChild(titleElement);
   col1.href = getLinkToPdf(archiveId, category);
   col1.target = "_blank";
 
   // append children
   rowDiv.appendChild(col1);
+  // rowDiv.appendChild(titleElement);
   rowDiv.appendChild(col2);
   rowDiv.appendChild(col5);
   rowDiv.appendChild(col4);
@@ -285,15 +283,34 @@ function getLinkToImage(archiveId, category) {
 }
 
 function addImage(archiveId, category) {
-  const slides = document.getElementById("slides");
+  switch (category) {
+    case "Papsturkunden":
+      archiveCategory = 1;
+      break;
+
+    case "Kardinalablass":
+      archiveCategory = 2;
+      break;
+
+    case "Bischofablass":
+      archiveCategory = 3;
+      break;
+
+    default:
+      return;
+  }
+
+  const slides = document.getElementById("slides" + archiveCategory);
 
   // create elements
   let container = document.createElement("li");
   let image = document.createElement("img");
 
   container.setAttribute("data-id", archiveId);
-  // todo: make work later
+
   image.src = getLinkToImage(archiveId, category);
+
+  // todo: first use default image, then load real one
   // image.src =
   //   "https://img.freepik.com/premium-vector/image-placeholder-pictogram_764382-15451.jpg?size=626&ext=jpg";
 
@@ -307,9 +324,13 @@ function showArchiveTable(kategorie) {
 
   for (let i = 1; i <= 3; i++) {
     document.getElementById("tableCategory" + i).style.display = "none";
+    document.getElementById("slides" + i).style.display = "none";
     document.getElementById("tableButton" + i).classList.remove("active");
   }
 
   document.getElementById("tableCategory" + kategorie).style.display = "block";
+  document.getElementById("slides" + kategorie).style.display = "flex";
   document.getElementById("tableButton" + kategorie).classList.add("active");
+
+  currentArchiveCategory = kategorie;
 }
