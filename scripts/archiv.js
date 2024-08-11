@@ -278,7 +278,7 @@ function getLinkToImage(archiveId, category) {
 
   let type = category.toLowerCase();
 
-  let link = `./img/archiv/${type}/${archiveId}.png`;
+  let link = `./img/archiv/${type}/${archiveId}.webp`;
   return link;
 }
 
