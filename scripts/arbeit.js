@@ -39,7 +39,7 @@ async function fillBearbeiteteUrkundenListe() {
           container = document.getElementById("arbeitListe1");
           break;
 
-        case "Notarielle Urkunden":
+        case "Urkunden Stadtverwaltung":
           container = document.getElementById("arbeitListe2");
           break;
 

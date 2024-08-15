@@ -199,7 +199,7 @@ function buildTableRow(
   let table;
 
   switch (category) {
-    case "Papsturkunden":
+    case "Papsturkunde":
       table = document.getElementById("tableCategory1");
       break;
 
@@ -284,7 +284,7 @@ function getLinkToImage(archiveId, category) {
 
 function addImage(archiveId, category) {
   switch (category) {
-    case "Papsturkunden":
+    case "Papsturkunde":
       archiveCategory = 1;
       break;
 
