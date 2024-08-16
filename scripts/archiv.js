@@ -180,20 +180,20 @@ async function setupTable() {
         item[tabelle.ort]
       );
 
-      addImage(item[tabelle.id], item[tabelle.kategorie]);
+      addImage(
+        item[tabelle.id],
+        item[tabelle.bezeichnung],
+        item[tabelle.kategorie],
+        item[tabelle.jahr],
+        item[tabelle.monat],
+        item[tabelle.tag],
+        item[tabelle.ort]
+      );
     }
   });
 }
 
-function buildTableRow(
-  archiveId,
-  title = "-",
-  category = "-",
-  year = "-",
-  month = "-",
-  day = "-",
-  place = "-"
-) {
+function buildTableRow(archiveId, title, category, year, month, day, place) {
   let table;
 
   switch (category) {
@@ -235,7 +235,8 @@ function buildTableRow(
 
   rowDiv.setAttribute("data-id", archiveId);
   // col1.appendChild(titleElement);
-  col1.href = getLinkToPdf(archiveId, category);
+  let id = createId(category, title, place, year, month, day);
+  col1.href = getLinkToPdf(id, category);
   col1.target = "_blank";
 
   // append children
@@ -247,6 +248,78 @@ function buildTableRow(
   rowDiv.appendChild(col3);
 
   table.appendChild(rowDiv);
+}
+
+function createId(category, title, place, year, month, day) {
+  let monthNumber;
+  switch (month) {
+    case "Januar":
+      monthNumber = "01";
+      break;
+
+    case "Februar":
+      monthNumber = "02";
+      break;
+
+    case "März":
+      monthNumber = "03";
+      break;
+
+    case "April":
+      monthNumber = "04";
+      break;
+
+    case "Mai":
+      monthNumber = "05";
+      break;
+
+    case "Juni":
+      monthNumber = "06";
+      break;
+
+    case "Juli":
+      monthNumber = "07";
+      break;
+    case "August":
+      monthNumber = "08";
+      break;
+    case "September":
+      monthNumber = "09";
+      break;
+    case "Oktober":
+      monthNumber = "10";
+      break;
+    case "November":
+      monthNumber = "11";
+      break;
+    case "Dezember":
+      monthNumber = "12";
+      break;
+
+    default:
+      monthNumber = "00";
+      break;
+  }
+
+  if (!day || day == "") {
+    day = "00";
+  } else if (day < 10) {
+    day = "0" + day;
+  }
+
+  let date = `${year}-${monthNumber}-${day}`;
+
+  // Concatenate parts in custom order
+  let id;
+  if (!place || place == "") {
+    id = `${category}_${date}_${title}`;
+  } else {
+    id = `${category}_${date}_${place}_${title}`;
+  }
+
+  id = id.replace(/ /g, "-");
+
+  return id;
 }
 
 function getLinkToPdf(archiveId, category) {
@@ -266,7 +339,6 @@ function getLinkToPdf(archiveId, category) {
 
 function getLinkToImage(archiveId, category) {
   if (!archiveId || archiveId == "") {
-    // return;
     archiveId = "error";
   }
 
@@ -280,7 +352,7 @@ function getLinkToImage(archiveId, category) {
   return link;
 }
 
-function addImage(archiveId, category) {
+function addImage(archiveId, title, category, year, month, day, place) {
   switch (category) {
     case "Papsturkunde":
       archiveCategory = 1;
@@ -306,7 +378,8 @@ function addImage(archiveId, category) {
 
   container.setAttribute("data-id", archiveId);
 
-  image.src = getLinkToImage(archiveId, category);
+  let id = createId(category, title, place, year, month, day);
+  image.src = getLinkToImage(id, category);
 
   // todo: first use default image, then load real one
   // image.src =
