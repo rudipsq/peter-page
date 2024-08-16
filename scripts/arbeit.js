@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 async function fillBearbeiteteUrkundenListe() {
   const googleSheetUrl =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTR7_U11hWSBljO_jorXV_2uHM8_tkI46TDPmOufA-0TWfE8ngnHjBEAEMMjYM2KC_D6o8aRQfGAIAh/pub?output=csv";
+    "https://docs.google.com/spreadsheets/d/1ckCi971f0Ws46eTbz1M1wCxIgaOlBZkW-leIFrbdZ5Q/pub?output=csv";
   const data = await fetchGoogleSheet(googleSheetUrl);
 
   if (!data) {

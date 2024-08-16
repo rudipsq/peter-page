@@ -141,10 +141,8 @@ function calculateTotalWidth(parentElement, childElement) {
 setupTable();
 
 async function setupTable() {
-  // const googleSheetUrl =
-  //   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRVIgmmtpTzJ5Zse_dLA-mp1FHmnkasYJisZrEBKb0Bpu37TO173hqGJiJsM32L8LPQShAWvFVnswl9/pub?output=csv";
   const googleSheetUrl =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQYASdgJMRy6udLuHkgb7XaM4_WIX0ofU8l2W8z8NH_DopOt-KbOnXWCfO8tfs9Sh9pDOM7ApD82gGx/pub?output=csv";
+    "https://docs.google.com/spreadsheets/d/1WSejuM784n5-R5xh9-YR88EQM6H7g3xObIS1etiuYa0/pub?output=csv";
 
   const data = await fetchGoogleSheet(googleSheetUrl);
 
