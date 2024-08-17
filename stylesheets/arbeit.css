@@ -63,14 +63,14 @@
 
 /* button navigation */
 .arbeitContainer nav {
-  padding-top: 10px;
+  padding-top: 20px;
   margin-top: auto;
   flex-direction: row;
 }
 
 .arbeitContainer button {
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
 
   color: rgba(255, 255, 255, 0.5);
   background-color: rgba(31, 22, 22, 0.5);
@@ -78,8 +78,10 @@
 
   cursor: pointer;
 
-  padding: 3px;
+  padding: 5px;
   margin: 0 3px 0 3px;
+
+  font-size: medium;
 
   transition: outline 0.18s ease-out;
 }

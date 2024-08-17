@@ -80,9 +80,9 @@ document.addEventListener("mouseleave", () => {
 });
 
 function updateArchiveId(element) {
-  // console.log("updated id", element);
+  console.log("updated id", element);
   let currentElement;
-  if (element.nodeName === "DIV") {
+  if (element.nodeName === "A") {
     currentElement = element;
   } else {
     let parentElement = element.parentElement;
@@ -214,9 +214,9 @@ function buildTableRow(archiveId, title, category, year, month, day, place) {
   }
 
   // create elements
-  let rowDiv = document.createElement("div");
+  let row = document.createElement("a");
 
-  let col1 = document.createElement("a");
+  let col1 = document.createElement("p");
   let col2 = document.createElement("p");
   let col3 = document.createElement("p");
   let col4 = document.createElement("p");
@@ -233,21 +233,21 @@ function buildTableRow(archiveId, title, category, year, month, day, place) {
   col4.innerHTML = month.substring(0, 3);
   col5.innerHTML = day;
 
-  rowDiv.setAttribute("data-id", archiveId);
+  row.setAttribute("data-id", archiveId);
   // col1.appendChild(titleElement);
   let id = createId(category, title, place, year, month, day);
-  col1.href = getLinkToPdf(id, category);
-  col1.target = "_blank";
+  row.href = getLinkToPdf(id, category);
+  row.target = "_blank";
 
   // append children
-  rowDiv.appendChild(col1);
+  row.appendChild(col1);
   // rowDiv.appendChild(titleElement);
-  rowDiv.appendChild(col2);
-  rowDiv.appendChild(col5);
-  rowDiv.appendChild(col4);
-  rowDiv.appendChild(col3);
+  row.appendChild(col2);
+  row.appendChild(col5);
+  row.appendChild(col4);
+  row.appendChild(col3);
 
-  table.appendChild(rowDiv);
+  table.appendChild(row);
 }
 
 function createId(category, title, place, year, month, day) {
