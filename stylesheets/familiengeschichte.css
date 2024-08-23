@@ -1,0 +1,37 @@
+ul {
+  list-style-type: none;
+  counter-reset: item;
+  padding-left: 0;
+
+  margin: 0;
+  margin-left: 20px;
+
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.25rem;
+}
+
+ul li {
+  counter-increment: item;
+  /* margin-bottom: 10px; */
+  padding: 4px 0 4px 0;
+
+  transition: color 0.08s ease-out;
+}
+
+ul li::before {
+  content: counter(item) ". ";
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+ul li:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* IMAGES */
+section img {
+  position: absolute;
+
+  translate: 200px 200px;
+  rotate: -20deg;
+}

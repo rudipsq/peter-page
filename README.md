@@ -10,6 +10,7 @@
 
 - index.html image: background ausschneiden
 - arbeit.html 1. text
+- archiv: papst bilder austauschen geschnittene version, mit tools bearbeiten
 - familiengeschichte.html text
 - handy version ganz am ende
 

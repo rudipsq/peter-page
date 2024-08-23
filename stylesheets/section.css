@@ -1,0 +1,51 @@
+section {
+  min-height: 100vh;
+  width: 100%;
+
+  position: relative;
+
+  padding-left: 122px;
+  padding-right: 122px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+section .sectionContainer {
+  width: 100%;
+
+  /* padding: 40px 40px 40px 0; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 2 divs */
+section .sectionContainer > div {
+  margin: 0;
+  padding: 30px;
+
+  /* width: 100%; */
+  width: 700px;
+  height: 70%;
+
+  background-color: rgba(31, 22, 22, 0.5);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+
+  outline: 2px solid rgba(124, 124, 124, 0.15);
+
+  display: flex;
+  flex-direction: column;
+
+  /* overflow: hidden; */
+}
+
+section .sectionContainer h2 {
+  margin: 0;
+  margin-bottom: 24px;
+  /* text-align: center; */
+  text-align: left;
+}
