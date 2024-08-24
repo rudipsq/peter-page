@@ -80,7 +80,7 @@ document.addEventListener("mouseleave", () => {
 });
 
 function updateArchiveId(element) {
-  console.log("updated id", element);
+  // console.log("updated id", element);
   let currentElement;
   if (element.nodeName === "A") {
     currentElement = element;

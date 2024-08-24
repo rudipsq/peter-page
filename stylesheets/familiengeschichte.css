@@ -62,3 +62,40 @@ section img {
   /* height: 400px; */
   /* width: 600px; */
 }
+
+/* BUTTONS */
+
+.linkContainer {
+  margin: 0;
+  margin-top: auto;
+
+  display: grid;
+}
+
+.linkContainer a {
+  border: none;
+  border-radius: 8px;
+
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(31, 22, 22, 0.5);
+  outline: 1px solid rgba(124, 124, 124, 0.15);
+
+  cursor: pointer;
+  text-decoration: none;
+
+  padding: 5px;
+  margin: 0 3px 6px 3px;
+  /* margin-bottom: 10px; */
+
+  font-size: 1.15rem;
+
+  transition: outline 0.18s ease-out;
+}
+
+.linkContainer a:last-child {
+  margin-bottom: 3px;
+}
+
+.linkContainer a:hover {
+  outline: 1px solid rgba(124, 124, 124, 0.7);
+}

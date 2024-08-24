@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Not Found</title>
+    <title>Familientafel Poeschkens</title>
 
-    <link rel="icon" type="image/x-icon" href="./img/icon/book.svg" />
+    <link rel="icon" type="image/x-icon" href="../img/icon/book.svg" />
 
-    <link rel="stylesheet" href="stylesheets/global.css" />
-    <link rel="stylesheet" href="stylesheets/background.css" />
-    <link rel="stylesheet" href="stylesheets/outline.css" />
-    <link rel="stylesheet" href="stylesheets/not_found.css" />
+    <link rel="stylesheet" href="../stylesheets/global.css" />
+    <link rel="stylesheet" href="../stylesheets/background.css" />
+    <link rel="stylesheet" href="../stylesheets/outline.css" />
+    <link rel="stylesheet" href="../stylesheets/tafel.css" />
   </head>
   <body>
     <div id="menuwrap">
@@ -24,18 +24,18 @@
         <div class="line2"></div>
         <div class="line-text">
           <nav>
-            <a href="./index.html">
-              <div><img src="./img/icon/home.svg" aria-hidden="true" /></div>
+            <a href="../index.html">
+              <div><img src="../img/icon/home.svg" aria-hidden="true" /></div>
               <p>Home</p>
             </a>
-            <a href="./familiengeschichte.html">
-              <div><img src="./img/icon/tree.svg" aria-hidden="true" /></div>
+            <a href="../familiengeschichte.html">
+              <div><img src="../img/icon/tree.svg" aria-hidden="true" /></div>
               <p>Familiengeschichte</p>
             </a>
-            <a href="./arbeit.html">
+            <a href="../arbeit.html">
               <div>
                 <img
-                  src="./img/icon/book.svg"
+                  src="../img/icon/book.svg"
                   aria-hidden="true"
                   style="height: 26px; padding-right: 1px"
                 />
@@ -45,7 +45,7 @@
             <a href="mailto:kontakt@peterpeusquens.com">
               <div>
                 <img
-                  src="./img/icon/mail.svg"
+                  src="../img/icon/mail.svg"
                   aria-hidden="true"
                   style="width: 26px"
                 />
@@ -58,18 +58,13 @@
     </div>
 
     <main>
-      <section id="not-found-section">
-        <div id="not-found-container">
-          <div>
-            <h2>Not Found.</h2>
-            <div class="arbeitListe">
-              <p>Sorry, the item you are looking for was not found.</p>
-            </div>
-          </div>
-
-          <button id="back-button" onclick="history.back()">Go Back</button>
-        </div>
-      </section>
+      <div
+        id="imageContainer"
+        style="
+          grid-template-columns: repeat(7, 1fr);
+          grid-template-rows: repeat(5, 1fr);
+        "
+      ></div>
     </main>
 
     <div id="foreground">
@@ -81,9 +76,10 @@
       <div id="background-blur"></div>
       <div id="background-vignette"></div>
       <div id="background-color"></div>
-      <img src="img/pic/background.webp" />
+      <img src="../img/pic/background.webp" />
     </div>
 
-    <script src="scripts/global.js"></script>
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/familientafel-poeschkens.js"></script>
   </body>
 </html>
