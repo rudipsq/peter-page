@@ -1,3 +1,13 @@
+section {
+  min-height: calc(100vh - 350px);
+  padding-top: calc(calc(100vh - 700px) / 2);
+  margin-bottom: 75px;
+}
+
+section:last-child {
+  margin-bottom: calc(calc(100vh - 700px) / 2);
+}
+
 ul {
   list-style-type: none;
   counter-reset: item;
@@ -6,7 +16,7 @@ ul {
   margin: 0;
   margin-left: 20px;
 
-  color: rgba(255, 255, 255, 0.5);
+  /* color: rgba(255, 255, 255, 0.5); */
   font-size: 1.25rem;
 }
 
@@ -15,16 +25,30 @@ ul li {
   /* margin-bottom: 10px; */
   padding: 4px 0 4px 0;
 
-  transition: color 0.08s ease-out;
+  /* transition: color 0.08s ease-out; */
 }
 
 ul li::before {
   content: counter(item) ". ";
   font-weight: bold;
   margin-right: 5px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  transition: color 0.08s ease-out;
 }
 
-ul li:hover {
+ul li a {
+  color: rgba(255, 255, 255, 0.5);
+
+  text-decoration: none;
+  padding: 4px 0 4px 0;
+
+  transition: color 0.08s ease-out;
+}
+
+ul li:hover a,
+ul li:hover::before {
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -32,6 +56,9 @@ ul li:hover {
 section img {
   position: absolute;
 
-  translate: 200px 200px;
-  rotate: -20deg;
+  /* translate: 200px 200px;
+  rotate: -20deg; */
+
+  /* height: 400px; */
+  /* width: 600px; */
 }
