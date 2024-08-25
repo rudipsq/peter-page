@@ -1,11 +1,19 @@
+const tafelName = document.currentScript.getAttribute("data-tafel");
 const imageContainer = document.getElementById("imageContainer");
 
+const tafelSettings = {
+  poeschkens: { rows: 5, cols: 7 },
+  peusquens: { rows: 5, cols: 6 },
+};
+
 // Load images (unchanged)
-for (let i = 1; i <= 5; i++) {
-  for (let j = 1; j <= 7; j++) {
+for (let i = 1; i <= tafelSettings[tafelName].rows; i++) {
+  for (let j = 1; j <= tafelSettings[tafelName].cols; j++) {
     let image = document.createElement("img");
     image.src =
-      "../img/familiengeschichte/familientafel-poeschkens/" +
+      "../img/familiengeschichte/familientafel-" +
+      tafelName +
+      "/" +
       j +
       "-" +
       i +
@@ -19,7 +27,7 @@ for (let i = 1; i <= 5; i++) {
 let scale = 1;
 const maxScale = 10;
 const minScale = 0.2;
-const zoomIntensity = 0.1; // Adjust this to control zoom sensitivity
+const zoomIntensity = 0.1;
 
 let translateX = 0,
   translateY = 0;

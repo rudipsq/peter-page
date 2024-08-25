@@ -138,6 +138,14 @@ function calculateTotalWidth(parentElement, childElement) {
 //*
 //* - - - - - setup table
 //*
+
+let categories = [
+  "Papsturkunde",
+  "Kardinalablass",
+  "Bischofablass",
+  "Stadtverwaltung",
+];
+
 setupTable();
 
 async function setupTable() {
@@ -197,16 +205,20 @@ function buildTableRow(archiveId, title, category, year, month, day, place) {
   let table;
 
   switch (category) {
-    case "Papsturkunde":
+    case categories[0]:
       table = document.getElementById("tableCategory1");
       break;
 
-    case "Kardinalablass":
+    case categories[1]:
       table = document.getElementById("tableCategory2");
       break;
 
-    case "Bischofablass":
+    case categories[2]:
       table = document.getElementById("tableCategory3");
+      break;
+
+    case categories[3]:
+      table = document.getElementById("tableCategory4");
       break;
 
     default:
@@ -354,16 +366,20 @@ function getLinkToImage(archiveId, category) {
 
 function addImage(archiveId, title, category, year, month, day, place) {
   switch (category) {
-    case "Papsturkunde":
+    case categories[0]:
       archiveCategory = 1;
       break;
 
-    case "Kardinalablass":
+    case categories[1]:
       archiveCategory = 2;
       break;
 
-    case "Bischofablass":
+    case categories[2]:
       archiveCategory = 3;
+      break;
+
+    case categories[3]:
+      archiveCategory = 4;
       break;
 
     default:
@@ -393,7 +409,7 @@ function addImage(archiveId, title, category, year, month, day, place) {
 function showArchiveTable(kategorie) {
   if (kategorie == null) return;
 
-  for (let i = 1; i <= 3; i++) {
+  for (let i = 1; i <= categories.length; i++) {
     document.getElementById("tableCategory" + i).style.display = "none";
     document.getElementById("slides" + i).style.display = "none";
     document.getElementById("tableButton" + i).classList.remove("active");

@@ -64,6 +64,7 @@
       <ul id="slides1"></ul>
       <ul id="slides2" style="display: none"></ul>
       <ul id="slides3" style="display: none"></ul>
+      <ul id="slides4" style="display: none"></ul>
     </div>
 
     <main>
@@ -107,7 +108,6 @@
         <div id="table">
           <div id="tableHead">
             <div>
-              <!-- <p>TITEL</p> -->
               <div id="tableTitle">
                 <button
                   id="tableButton1"
@@ -116,11 +116,17 @@
                 >
                   PAPSTURKUNDEN
                 </button>
+
                 <button id="tableButton2" onclick="showArchiveTable(2)">
                   KARDINALSABLÄSSE
                 </button>
+
                 <button id="tableButton3" onclick="showArchiveTable(3)">
                   BISCHOFSABLÄSSE
+                </button>
+
+                <button id="tableButton4" onclick="showArchiveTable(4)">
+                  STADTVERWALTUNG
                 </button>
               </div>
               <p>ORT</p>
@@ -133,6 +139,7 @@
             <div id="tableCategory1" style="display: block"></div>
             <div id="tableCategory2"></div>
             <div id="tableCategory3"></div>
+            <div id="tableCategory4"></div>
           </div>
         </div>
       </div>
