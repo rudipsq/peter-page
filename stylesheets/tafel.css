@@ -30,6 +30,7 @@ main {
   border-radius: 10px;
   border: solid rgba(255, 255, 255, 0.4) 1px;
   overflow: hidden;
+  background-color: white;
 
   transform-origin: center;
   transition: transform 0.3s ease;
