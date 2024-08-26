@@ -240,7 +240,7 @@ function buildTableRow(archiveId, title, category, year, month, day, place) {
   col1.innerHTML = title;
   // titleElement.innerHTML = title;
   // col2.innerHTML = category;
-  col2.innerHTML = place;
+  col2.innerHTML = place == "X" ? "" : place;
   col3.innerHTML = year;
   col4.innerHTML = month.substring(0, 3);
   col5.innerHTML = day;

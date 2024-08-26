@@ -1,18 +1,6 @@
-# START PAGE CONTENT
+# CREDITS
 
-- bild portrait und tisch in mitte unten
-
-# IDEEN
-
-- werke archiv: https://studiofables.com/fr/archives
-
-# TODO
-
-- index.html image: background ausschneiden
-- arbeit.html 1. text
-- archiv: papst bilder austauschen geschnittene version, mit tools bearbeiten
-- familiengeschichte.html text
-- handy version ganz am ende
+- transkriptionen archiv: https://studiofables.com/fr/archives
 
 # PDF TOOLS
 
