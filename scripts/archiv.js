@@ -235,7 +235,7 @@ function buildTableRow(archiveId, title, category, year, month, day, place) {
   let col5 = document.createElement("p");
 
   // fill elements
-  let titleElement = document.createElement("h3");
+  // let titleElement = document.createElement("h3");
 
   col1.innerHTML = title;
   // titleElement.innerHTML = title;
