@@ -17,6 +17,27 @@ document.getElementById("menuLine").addEventListener("mouseout", function () {
   document.getElementById("wrapBackground").classList.remove("active");
 });
 
+// mobile navigation
+
+function toggleMobileMenu() {
+  const overlay = document.getElementById("menuwrap");
+  const menu = document.getElementById("menubar");
+  if (overlay.style.display != "flex") {
+    overlay.style.display = "flex";
+    menu.style.display = "flex";
+  } else {
+    overlay.style.display = "none";
+    menu.style.display = "none";
+  }
+}
+
+let menubar = document.getElementById("menubar");
+menubar.addEventListener("click", function (event) {
+  if (event.target === menubar) {
+    toggleMobileMenu();
+  }
+});
+
 // -
 // - - - Google Sheet
 async function fetchGoogleSheet(googleSheetUrl) {

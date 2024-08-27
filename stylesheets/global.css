@@ -46,6 +46,10 @@ img {
 }
 
 /* - - - MENUWRAP - - - */
+#mobileMenuButton {
+  display: none;
+}
+
 #menuwrap {
   z-index: 998;
   position: fixed;
@@ -79,9 +83,6 @@ img {
 #menubar {
   z-index: 999;
   position: fixed;
-
-  bottom: 60px;
-  left: 66px;
 
   background-color: rgb(49, 49, 49);
   filter: contrast(5);
@@ -161,7 +162,83 @@ img {
   width: 300px;
 }
 
-/* - - - - Main - - - - */
+/* - - - MOBILE MENU - - - */
+@media screen and (max-width: 680px) {
+  #mobileMenuButton {
+    z-index: 1000;
+    position: fixed;
+
+    margin: 20px;
+
+    top: 0;
+    right: 0;
+
+    display: block;
+  }
+
+  #mobileMenuButton .line-text {
+    width: auto;
+    aspect-ratio: 1;
+
+    padding: 12px;
+  }
+
+  #mobileMenuButton .line-text img {
+    height: 34px;
+  }
+
+  #menuwrap {
+    height: 100vh;
+    width: 100vw;
+
+    top: 0;
+    left: 0;
+    margin: 0;
+
+    display: none;
+
+    backdrop-filter: blur(15px);
+  }
+
+  #menuwrap #wrapBackground {
+    width: 300px;
+    height: 221px;
+
+    background-color: rgb(20, 20, 20);
+    opacity: 0.4;
+
+    transition: none;
+  }
+
+  /* - - - MOBILE MENUBAR - - - */
+  #menubar {
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0;
+
+    display: none;
+  }
+
+  #menubar nav {
+    transition: none;
+  }
+
+  #menubar nav a div {
+    transition: none;
+  }
+
+  #menubar nav a p {
+    transition: none;
+  }
+
+  .line-text {
+    transition: none;
+    width: 300px;
+  }
+}
+
+/* - - - - MAIN - - - - */
 main {
   position: absolute;
   top: 0;
@@ -169,4 +246,6 @@ main {
   width: 100%;
 
   z-index: 1;
+
+  overflow: hidden;
 }

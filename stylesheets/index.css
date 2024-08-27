@@ -2,9 +2,16 @@
 .marquee {
   top: 10vh;
   position: absolute;
+
   width: 600px;
-  height: 1.5em;
-  font-size: 4em;
+  max-width: 90%;
+
+  /* height: 1.5em; */
+  height: 150px;
+  max-height: 90%;
+
+  font-size: 6rem;
+
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -12,6 +19,18 @@
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none;
+}
+
+@media screen and (max-width: 680px) {
+  .marquee {
+    top: 12vh;
+
+    width: 600px;
+    max-width: 80%;
+
+    height: 1.6em;
+    font-size: 5rem;
+  }
 }
 
 .marquee_text {

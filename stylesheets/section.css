@@ -27,8 +27,9 @@ section .sectionContainer > div {
   margin: 0;
   padding: 30px;
 
-  /* width: 100%; */
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
+  min-width: 410px;
   height: 700px;
 
   background-color: rgba(31, 22, 22, 0.5);
