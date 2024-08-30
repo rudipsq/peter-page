@@ -37,9 +37,11 @@ function updateTransform() {
   imageContainer.style.transform = `translate(calc(-50% + ${translateX}px), calc(-50% + ${translateY}px)) scale(${scale})`;
 }
 
-function updateZoom(e) {
-  e.preventDefault();
-  const delta = Math.sign(e.deltaY) * -1;
+function updateZoom(e, delta) {
+  if (e) {
+    e.preventDefault();
+    delta = Math.sign(e.deltaY) * -1;
+  }
 
   // Non-linear zooming
   const zoomFactor = Math.exp(delta * zoomIntensity);

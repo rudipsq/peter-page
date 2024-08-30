@@ -4,8 +4,61 @@
   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
-#menuwrap #wrapBackground {
+#menuwrap #wrapBackground,
+#mobileMenuButton {
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+#controlsConatainer {
+  z-index: 999;
+  position: fixed;
+}
+
+#controls {
+  z-index: 1000;
+  position: fixed;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 0.7);
+
+  top: 30px;
+  left: 30px;
+}
+
+#controls .line-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+
+  width: 110px;
+
+  margin: 0;
+  padding: 13px;
+}
+
+#controls .line-text div {
+  padding: 3px;
+  margin: 0;
+
+  height: 36px;
+  width: 36px;
+
+  cursor: pointer;
+}
+
+#controls .line-text div img {
+  height: 29px;
+  width: 29px;
+
+  transition: scale 0.2s ease;
+}
+
+#controls .line-text div:hover img {
+  scale: 1.15;
 }
 
 main {
