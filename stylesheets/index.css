@@ -6,11 +6,14 @@
   width: 600px;
   max-width: 90%;
 
-  /* height: 1.5em; */
-  height: 150px;
-  max-height: 90%;
+  /* height: 150px;
+  max-height: 90%; */
 
-  font-size: 6rem;
+  height: 15vh;
+  min-height: 100px;
+  max-height: 150px;
+
+  font-size: clamp(2em, 10vh, 6em);
 
   display: grid;
   place-items: center;

@@ -28,7 +28,9 @@
 }
 
 .light-beam {
-  width: 1300px;
+  /* width: 1300px; */
+  width: 100vw;
+
   opacity: 0.3;
 }
 
