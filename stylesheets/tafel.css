@@ -57,8 +57,10 @@
   transition: scale 0.2s ease;
 }
 
-#controls .line-text div:hover img {
-  scale: 1.15;
+@media (hover: hover) {
+  #controls .line-text div:hover img {
+    scale: 1.15;
+  }
 }
 
 main {

@@ -49,4 +49,12 @@ section .sectionContainer h2 {
   margin-bottom: 24px;
   /* text-align: center; */
   text-align: left;
+
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 680px) {
+  section .sectionContainer > div {
+    padding: 20px;
+  }
 }

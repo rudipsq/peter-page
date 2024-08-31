@@ -140,8 +140,10 @@ img {
   height: 29px;
 }
 
-#menubar nav a:hover div {
-  filter: blur(3px);
+@media (hover: hover) {
+  #menubar nav a:hover div {
+    filter: blur(3px);
+  }
 }
 
 #menubar nav a p {
@@ -150,9 +152,11 @@ img {
   text-decoration: none;
 }
 
-#menubar nav a:hover p {
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.65);
+@media (hover: hover) {
+  #menubar nav a:hover p {
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.65);
+  }
 }
 
 .line-text {
@@ -160,8 +164,10 @@ img {
   transition: all 0.3s ease;
 }
 
-#menubar .line:hover .line-text {
-  width: 300px;
+@media (hover: hover) {
+  #menubar .line:hover .line-text {
+    width: 300px;
+  }
 }
 
 /* - - - MOBILE MENU - - - */
@@ -218,6 +224,9 @@ img {
     width: 100vw;
 
     margin: 0;
+
+    background-color: transparent;
+    filter: none;
 
     display: none;
   }

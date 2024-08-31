@@ -17,7 +17,7 @@ ul {
   margin-left: 20px;
 
   /* color: rgba(255, 255, 255, 0.5); */
-  font-size: 1.25rem;
+  font-size: 1.35rem;
 }
 
 ul li {
@@ -47,9 +47,11 @@ ul li a {
   transition: color 0.08s ease-out;
 }
 
-ul li:hover a,
-ul li:hover::before {
-  color: rgba(255, 255, 255, 0.8);
+@media (hover: hover) {
+  ul li:hover a,
+  ul li:hover::before {
+    color: rgba(255, 255, 255, 0.8);
+  }
 }
 
 /* IMAGES */
@@ -105,6 +107,8 @@ section img {
   margin-bottom: 3px;
 }
 
-.linkContainer a:hover {
-  outline: 1px solid rgba(124, 124, 124, 0.7);
+@media (hover: hover) {
+  .linkContainer a:hover {
+    outline: 1px solid rgba(124, 124, 124, 0.7);
+  }
 }

@@ -59,6 +59,8 @@ h2 {
   transition: transform 0.12s ease;
 }
 
-#back-button:hover {
-  transform: scale(1.05);
+@media (hover: hover) {
+  #back-button:hover {
+    transform: scale(1.05);
+  }
 }

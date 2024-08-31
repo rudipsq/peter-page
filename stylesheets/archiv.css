@@ -18,8 +18,10 @@
   transition: transform 0.12s ease;
 }
 
-#archivButton:hover {
-  transform: scale(1.05);
+@media (hover: hover) {
+  #archivButton:hover {
+    transform: scale(1.05);
+  }
 }
 
 /* ARCHIV SECTION */
@@ -110,8 +112,10 @@
   flex-direction: row;
 }
 
-#tableHead #tableTitle button:hover {
-  outline: 1px solid rgba(255, 255, 255, 0.4);
+@media (hover: hover) {
+  #tableHead #tableTitle button:hover {
+    outline: 1px solid rgba(255, 255, 255, 0.4);
+  }
 }
 
 #tableHead #tableTitle button.active {
@@ -159,10 +163,6 @@
   flex-direction: row;
 }
 
-#tableBody div a:hover {
-  /* background-color: rgb(15, 10, 10); */
-}
-
 /* ARCHIV table body columns */
 #tableBody div a p {
   margin: 0;
@@ -178,10 +178,20 @@
   margin-right: auto;
 
   font-weight: bold;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: auto;
+  line-height: 1.2em; /* Adjust as needed */
 }
 
-#tableBody div a:hover p:nth-child(1) {
-  text-decoration: underline white 2px;
+@media (hover: hover) {
+  #tableBody div a:hover p:nth-child(1) {
+    text-decoration: underline white 2px;
+  }
 }
 
 #tableBody div a p:nth-child(2) {
@@ -217,6 +227,12 @@
   overflow: hidden;
 }
 
+@media (hover: none) {
+  #flying-div {
+    display: none;
+  }
+}
+
 .hide {
   opacity: 0;
   scale: 0.6;
@@ -246,4 +262,44 @@
 
 #flying-div ul li img {
   height: 400px;
+}
+
+@media screen and (max-width: 680px) {
+  #table {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #tableHead {
+    height: 170px;
+  }
+
+  #tableHead div {
+    padding-top: 10px;
+  }
+
+  #tableHead #tableTitle {
+    /* flex-direction: column; */
+
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+
+  #tableHead #tableTitle button {
+    width: 100%;
+    margin: 2px;
+  }
+  #tableHead div p:nth-child(2),
+  #tableHead div p:nth-child(3),
+  #tableHead div p:nth-child(4),
+  #tableHead div p:nth-child(5) {
+    display: none;
+  }
+
+  #tableBody div a p:nth-child(2),
+  #tableBody div a p:nth-child(3),
+  #tableBody div a p:nth-child(4),
+  #tableBody div a p:nth-child(5) {
+    display: none;
+  }
 }
