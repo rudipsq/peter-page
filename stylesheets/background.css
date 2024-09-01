@@ -73,6 +73,8 @@
   width: 100%;
 
   /* backdrop-filter: blur(4px); */
+
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
 }
 

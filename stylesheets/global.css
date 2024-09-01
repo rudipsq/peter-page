@@ -34,6 +34,8 @@ body {
   margin: 0rem;
   overscroll-behavior-y: none;
   overflow-x: hidden;
+
+  touch-action: manipulation;
 }
 
 img {
@@ -68,7 +70,8 @@ img {
 }
 
 #menuwrap #wrapBackground {
-  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   width: 64px;
   height: 221px;
 
@@ -142,7 +145,8 @@ img {
 
 @media (hover: hover) {
   #menubar nav a:hover div {
-    filter: blur(3px);
+    -webkit-backdrop-filter: blur(2px);
+    filter: blur(2px);
   }
 }
 
@@ -153,9 +157,15 @@ img {
 }
 
 @media (hover: hover) {
-  #menubar nav a:hover p {
-    text-decoration: underline;
-    text-decoration-color: rgba(255, 255, 255, 0.65);
+  #menubar nav a p {
+    color: rgba(255, 255, 255, 0.6);
+
+    transition: color 0.3s ease;
+  }
+
+  #menubar nav:hover a:hover p {
+    text-decoration: none;
+    color: white;
   }
 }
 
@@ -205,7 +215,8 @@ img {
 
     display: none;
 
-    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
 
   #menuwrap #wrapBackground {
