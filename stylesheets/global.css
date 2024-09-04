@@ -158,12 +158,12 @@ img {
 
 @media (hover: hover) {
   #menubar nav a p {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.5);
 
     transition: color 0.3s ease;
   }
 
-  #menubar nav:hover a:hover p {
+  #menubar nav a:hover p {
     text-decoration: none;
     color: white;
   }
