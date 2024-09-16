@@ -143,7 +143,7 @@ let categories = [
   "Papsturkunde",
   "Kardinalablass",
   "Bischofablass",
-  "Stadtverwaltung",
+  "Verwaltung-&-Wappenbriefe",
 ];
 
 setupTable();
