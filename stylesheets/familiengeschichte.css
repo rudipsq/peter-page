@@ -1,11 +1,11 @@
 section {
-  min-height: calc(100vh - 350px);
-  padding-top: calc(calc(100vh - 700px) / 2);
-  margin-bottom: 75px;
+  min-height: calc(100vh - 200px);
+  padding-top: 200px;
+  /* margin-bottom: 75px; */
 }
 
 section:last-child {
-  margin-bottom: calc(calc(100vh - 700px) / 2);
+  padding-bottom: calc(35vh - 60px);
 }
 
 ul {
@@ -57,6 +57,7 @@ ul li a {
 /* IMAGES */
 section img {
   position: absolute;
+  top: 0;
 
   /* translate: 200px 200px;
   rotate: -20deg; */

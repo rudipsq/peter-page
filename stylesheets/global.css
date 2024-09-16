@@ -47,6 +47,10 @@ img {
   pointer-events: none; /* Prevent pointer events */
 }
 
+a {
+  color: white;
+}
+
 /* - - - MENUWRAP - - - */
 #mobileMenuButton {
   display: none;

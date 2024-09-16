@@ -26,6 +26,12 @@
   }
 }
 
+@media screen and (max-width: 680px) {
+  #archivButton {
+    display: none;
+  }
+}
+
 /* ARCHIV SECTION */
 #archiv {
   margin-top: 100vh;

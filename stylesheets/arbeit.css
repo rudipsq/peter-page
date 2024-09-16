@@ -5,6 +5,7 @@ section {
 }
 
 .sectionContainer > div {
+  height: 700px;
   max-height: 90vh;
 }
 
