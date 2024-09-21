@@ -78,17 +78,79 @@
 /* - - - IMAGE - - - */
 #image {
   position: fixed;
-  bottom: 0;
+  top: 72%;
 
-  height: 700px;
-  width: 300px;
+  translate: 0 -65%;
+
+  transform-origin: center;
 
   display: flex;
   justify-content: center;
 
-  /* comment next line: light beam position */
   z-index: 10;
 }
 
 #image img {
+  position: relative;
+
+  max-height: 60vh;
+  max-width: 70vw;
+  /* height: 700px;
+  width: 300px; */
+
+  /* max-width: 60vw;
+  aspect-ratio: 1.4; */
+
+  outline: rgb(233, 233, 233) solid 4px;
+}
+
+#imageText {
+  position: fixed;
+  bottom: 4px;
+
+  padding: 12px 22px;
+  border-radius: 50px;
+
+  color: white;
+  background-color: rgba(31, 22, 22, 0.8);
+  outline: 2px solid rgba(124, 124, 124, 0.15);
+
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+
+  transition: transform 0.12s ease;
+
+  backdrop-filter: blur(4px);
+}
+
+@media (hover: hover) {
+  #imageText:hover {
+    transform: scale(1.06);
+  }
+}
+
+/* @media screen and (max-width: 999px) {
+  #imageText {
+    position: absolute;
+    bottom: -10vh;
+  }
+} */
+
+@media screen and (max-width: 680px) {
+  #image {
+    /* top: 35%; */
+    top: 60%;
+    bottom: auto;
+  }
+
+  #image img {
+    /* max-height: 65vh; */
+    max-width: 80vw;
+  }
+
+  #imageText {
+    bottom: -90px;
+    font-size: 20px;
+  }
 }

@@ -14,15 +14,16 @@
   outline: 2px solid rgba(124, 124, 124, 0.15);
 
   text-decoration: none;
+  font-size: 22px;
 
   transition: transform 0.12s ease;
 
-  font-size: 22px;
+  backdrop-filter: blur(4px);
 }
 
 @media (hover: hover) {
   #archivButton:hover {
-    transform: scale(1.08);
+    transform: scale(1.06);
   }
 }
 
