@@ -3,20 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Peter Peusquens</title>
+
+    <meta name="robots" content="noindex" />
+
+    <title>Impressum</title>
 
     <link rel="icon" type="image/x-icon" href="./img/icon/book.svg" />
 
-    <link rel="stylesheet" href="stylesheets/global.css" />
-    <link rel="stylesheet" href="stylesheets/background.css" />
-    <link rel="stylesheet" href="stylesheets/outline.css" />
-    <link rel="stylesheet" href="stylesheets/index.css" />
+    <link rel="stylesheet" href="./stylesheets/global.css" />
+    <link rel="stylesheet" href="./stylesheets/background.css" />
+    <link rel="stylesheet" href="./stylesheets/outline.css" />
+
+    <link rel="stylesheet" href="./stylesheets/section.css" />
+    <!-- <link rel="stylesheet" href="./stylesheets/familiengeschichte.css" /> -->
   </head>
   <body>
     <div id="menuwrap">
       <div id="wrapBackground"></div>
     </div>
-
     <div id="menubar">
       <div id="menuLine" class="line">
         <div class="backLine1"></div>
@@ -70,43 +74,35 @@
       </div>
     </div>
 
-    <div id="foreground">
-      <div class="marquee">
-        <div class="marquee_blur" aria-hidden="true">
-          <p class="marquee_text">Peter Peusquens</p>
+    <main>
+      <section id="inhalt">
+        <div class="sectionContainer">
+          <div style="align-items: start">
+            <h1>Impressum</h1>
+
+            <p>
+              Rudi Peusquens<br />
+              Stuttgarter Str. 106<br />
+              70736 Fellbach
+            </p>
+
+            <h2>Kontakt</h2>
+            <p>
+              Telefon: 017642275758<br />
+              E-Mail: kontakt@peterpeusquens.com
+            </p>
+          </div>
         </div>
-        <div class="marquee_clear">
-          <p class="marquee_text">Peter Peusquens</p>
-        </div>
-      </div>
-
-      <div id="image">
-        <!-- <img src="./img/pic/peter-peusquens.jpg" /> -->
-        <img src="./img/pic/alexa-und-peter-peusquens.webp" />
-
-        <a
-          id="imageText1"
-          class="imageText"
-          href="./data/HASK Mein Weg zum Restaurierungs-Paten.pdf"
-          target="_blank"
-          >Familienforschung und<br />Urkundenbearbeitungen 1995 - 2025</a
-        >
-      </div>
-
-      <a
-        id="imageText2"
-        class="imageText"
-        href="./data/HASK Mein Weg zum Restaurierungs-Paten.pdf"
-        target="_blank"
-        >Familienforschung und<br />Urkundenbearbeitungen 1995 - 2025</a
-      >
-
-      <div id="light" class="light-beam light-off"></div>
+      </section>
 
       <div id="legalLink">
         <a href="impressum.html"><p>Impressum</p></a>
         <a href="datenschutz.html"><p>Datenschutz</p></a>
       </div>
+    </main>
+
+    <div id="foreground">
+      <div id="light" class="light-beam light-off"></div>
     </div>
 
     <div id="background">
@@ -114,10 +110,10 @@
       <div id="background-blur"></div>
       <div id="background-vignette"></div>
       <div id="background-color"></div>
-      <img src="img/pic/background.webp" />
+      <img src="./img/pic/background.webp" />
     </div>
 
-    <script src="scripts/global.js"></script>
-    <script src="scripts/index.js"></script>
+    <script src="./scripts/global.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

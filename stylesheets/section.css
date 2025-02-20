@@ -30,7 +30,6 @@ section .sectionContainer > div {
   width: 100%;
   max-width: 700px;
   min-width: 410px;
-  /* min-height: 700px; */
 
   background-color: rgba(31, 22, 22, 0.5);
   -webkit-backdrop-filter: blur(10px);
@@ -43,6 +42,18 @@ section .sectionContainer > div {
   flex-direction: column;
 
   /* overflow: hidden; */
+}
+
+section .sectionContainer h1,
+section .sectionContainer h2,
+section .sectionContainer h3,
+section .sectionContainer h4,
+section .sectionContainer p {
+  margin: 0;
+  margin-bottom: 24px;
+  text-align: left;
+
+  word-wrap: break-word;
 }
 
 section .sectionContainer h2 {

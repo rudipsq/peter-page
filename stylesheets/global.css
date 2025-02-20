@@ -275,3 +275,12 @@ main {
 
   overflow: hidden;
 }
+
+#legalLink {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+
+  font-size: 0.75rem;
+  text-align: end;
+}
