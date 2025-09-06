@@ -144,6 +144,7 @@ let categories = [
   "Kardinalablass",
   "Bischofablass",
   "Verwaltung-&-Wappenbriefe",
+  "weitere-Illuminierte-Urkunden",
 ];
 
 setupTable();
@@ -173,6 +174,7 @@ async function setupTable() {
   };
 
   data.slice(3).forEach((item) => {
+    // console.log(item);
     if (
       item[tabelle.id] &&
       !item[tabelle.id].includes("x") &&
@@ -219,6 +221,10 @@ function buildTableRow(archiveId, title, category, year, month, day, place) {
 
     case categories[3]:
       table = document.getElementById("tableCategory4");
+      break;
+
+    case categories[4]:
+      table = document.getElementById("tableCategory5");
       break;
 
     default:
@@ -343,10 +349,12 @@ function getLinkToPdf(archiveId, category) {
     return "./not_found.html";
   }
 
-  let type = category.toLowerCase();
+  if (category == "weitere-Illuminierte-Urkunden") {
+    // SONDERFALL FUER NEUE KATEGORIE
+    return `./data/archiv/${category}/${archiveId}.doc`;
+  }
 
-  let link = `./data/archiv/${type}/${archiveId}.pdf`;
-  return link;
+  return `./data/archiv/${category.toLowerCase()}/${archiveId}.pdf`;
 }
 
 function getLinkToImage(archiveId, category) {
@@ -358,13 +366,17 @@ function getLinkToImage(archiveId, category) {
     return;
   }
 
-  let type = category.toLowerCase();
+  if (category == "weitere-Illuminierte-Urkunden") {
+    // SONDERFALL FUER NEUE KATEGORIE
+    return `./img/archiv/${category}/${archiveId}.png`;
+  }
 
-  let link = `./img/archiv/${type}/${archiveId}.webp`;
-  return link;
+  return `./img/archiv/${category.toLowerCase()}/${archiveId}.webp`;
 }
 
 function addImage(archiveId, title, category, year, month, day, place) {
+  console.log(category);
+
   switch (category) {
     case categories[0]:
       archiveCategory = 1;
@@ -380,6 +392,10 @@ function addImage(archiveId, title, category, year, month, day, place) {
 
     case categories[3]:
       archiveCategory = 4;
+      break;
+
+    case categories[4]:
+      archiveCategory = 5;
       break;
 
     default:
