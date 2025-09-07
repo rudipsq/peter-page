@@ -409,7 +409,7 @@ function getLinkToPdf(archiveId, category) {
   return `./data/archiv/${category.toLowerCase()}/${archiveId}.pdf`;
 }
 
-function getLinkToImage(archiveId, category, returnErrorImage = false) {
+function getLinkToImage(archiveId, category) {
   if (!archiveId || archiveId == "") {
     archiveId = "error";
   }
@@ -418,21 +418,12 @@ function getLinkToImage(archiveId, category, returnErrorImage = false) {
     return;
   }
 
-  if (category == "weitere-Illuminierte-Urkunden" && returnErrorImage) {
-    // SONDERFALL FUER NEUE KATEGORIE
-    return `./img/archiv/${category}/error.webp`;
-  }
-
   if (category == "weitere-Illuminierte-Urkunden") {
     // SONDERFALL FUER NEUE KATEGORIE
     return `./img/archiv/${category}/${archiveId}.webp`;
   }
 
-  if (!returnErrorImage) {
-    return `./img/archiv/${category.toLowerCase()}/${archiveId}.webp`;
-  }
-
-  return `./img/archiv/${category.toLowerCase()}/error.webp`;
+  return `./img/archiv/${category.toLowerCase()}/${archiveId}.webp`;
 }
 
 function addImage(archiveId, title, category, year, month, day, place) {
@@ -472,10 +463,8 @@ function addImage(archiveId, title, category, year, month, day, place) {
   let id = createId(category, title, place, year, month, day);
   image.src = getLinkToImage(id, category);
   image.onerror = function () {
-    // console.log(getLinkToImage(id, category));
-    this.src = getLinkToImage(id, category, true);
+    this.style.opacity = "0";
     this.style.width = "100px";
-    this.style.height = "100px";
   };
 
   // todo: first use default image, then load real one
