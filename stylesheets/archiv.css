@@ -69,7 +69,7 @@
   display: flex;
   flex-direction: row;
 
-  padding-top: 50px;
+  /* padding-top: 50px; */
 
   font-size: large;
 
@@ -92,11 +92,13 @@
 /* ARCHIV table head columns */
 #tableHead #tableTitle {
   padding: 0;
+  padding-top: 1px;
+  margin-top: 50px;
   margin-right: auto;
 
   display: flex;
   flex-direction: row;
-  gap: 14px;
+  gap: 6px 12px;
   flex-wrap: wrap;
 }
 
@@ -114,7 +116,7 @@
   font-size: large;
 
   padding: 3px 6px 0 6px;
-  margin: 0 1px 2px 1px;
+  margin: 0 1px 4px 1px;
 
   transition: outline 0.18s ease-out;
 
@@ -135,8 +137,14 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
+#tableHead div p {
+  min-width: fit-content;
+  overflow: visible;
+  margin-top: auto;
+  margin-bottom: 8px;
+}
+
 #tableHead div p:nth-child(2) {
-  /* width: 50px; */
   padding-left: 10px;
 }
 
