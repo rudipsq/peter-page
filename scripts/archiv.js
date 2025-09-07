@@ -403,7 +403,7 @@ function getLinkToPdf(archiveId, category) {
 
   if (category == "weitere-Illuminierte-Urkunden") {
     // SONDERFALL FUER NEUE KATEGORIE
-    return `./data/archiv/${category}/${archiveId}.doc`;
+    return `./data/archiv/${category}/${archiveId}.pdf`;
   }
 
   return `./data/archiv/${category.toLowerCase()}/${archiveId}.pdf`;
