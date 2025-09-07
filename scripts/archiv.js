@@ -1,3 +1,61 @@
+// // DEBUG_LOG_BLOCK_START
+// (function () {
+//   if (window.DEBUG_LOG_INSTALLED) return;
+//   window.DEBUG_LOG_INSTALLED = true;
+
+//   const logs = [];
+
+//   function addRow(el) {
+//     if (
+//       typeof Element !== "undefined" &&
+//       el instanceof Element &&
+//       el.tagName === "A"
+//     ) {
+//       logs.push(el.outerHTML);
+//     }
+//   }
+
+//   window.DEBUG_LOG = {
+//     addRow,
+//     download(filename) {
+//       const content = logs.join("\n");
+//       const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+//       const url = URL.createObjectURL(blob);
+//       const a = document.createElement("a");
+//       a.href = url;
+//       a.download = filename || "debug-rows.txt";
+//       document.body.appendChild(a);
+//       a.click();
+//       a.remove();
+//       URL.revokeObjectURL(url);
+//     },
+//     clear() {
+//       logs.length = 0;
+//     },
+//     getAll() {
+//       return logs.slice();
+//     },
+//   };
+
+//   // Patch console.log -> wenn A-Tag drin, speichern
+//   const origLog = console.log.bind(console);
+//   console.log = function (...args) {
+//     args.forEach((arg) => addRow(arg));
+//     origLog(...args);
+//   };
+
+//   // Shortcut Ctrl+Shift+D
+//   window.addEventListener("keydown", function (e) {
+//     if (e.ctrlKey && e.shiftKey && (e.key === "D" || e.key === "d")) {
+//       e.preventDefault();
+//       window.DEBUG_LOG.download();
+//     }
+//   });
+
+//   console.log("[DEBUG_LOG for <a> installed]");
+// })();
+// // DEBUG_LOG_BLOCK_END
+
 //*
 //* - - - - -  flying div
 //*
@@ -150,16 +208,9 @@ let categories = [
 setupTable();
 
 async function setupTable() {
-  const googleSheetUrl =
-    "https://docs.google.com/spreadsheets/d/1WSejuM784n5-R5xh9-YR88EQM6H7g3xObIS1etiuYa0/pub?output=csv";
-
-  const data = await fetchGoogleSheet(googleSheetUrl);
-
-  if (!data) {
-    // ? does this error work?
-    console.error("failed to load archive items");
-    return;
-  }
+  const data = await fetchGoogleSheet(
+    "../../../data/archiv/archiv_transkribtionen.csv"
+  );
 
   let tabelle = {
     id: 0,
@@ -174,21 +225,20 @@ async function setupTable() {
   };
 
   data.slice(3).forEach((item) => {
-    // console.log(item);
     if (
       item[tabelle.id] &&
       !item[tabelle.id].includes("x") &&
       item[tabelle.kategorie]
     ) {
-      buildTableRow(
-        item[tabelle.id],
-        item[tabelle.bezeichnung],
-        item[tabelle.kategorie],
-        item[tabelle.jahr],
-        item[tabelle.monat],
-        item[tabelle.tag],
-        item[tabelle.ort]
-      );
+      // buildTableRow(
+      //   item[tabelle.id],
+      //   item[tabelle.bezeichnung],
+      //   item[tabelle.kategorie],
+      //   item[tabelle.jahr],
+      //   item[tabelle.monat],
+      //   item[tabelle.tag],
+      //   item[tabelle.ort]
+      // );
 
       addImage(
         item[tabelle.id],
@@ -266,6 +316,8 @@ function buildTableRow(archiveId, title, category, year, month, day, place) {
   row.appendChild(col3);
 
   table.appendChild(row);
+
+  console.log(row); // HERE
 }
 
 function createId(category, title, place, year, month, day) {
@@ -384,8 +436,6 @@ function getLinkToImage(archiveId, category, returnErrorImage = false) {
 }
 
 function addImage(archiveId, title, category, year, month, day, place) {
-  console.log(category);
-
   switch (category) {
     case categories[0]:
       archiveCategory = 1;

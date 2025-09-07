@@ -16,7 +16,7 @@ ul {
   margin: 0;
   margin-left: 20px;
 
-  /* color: rgba(255, 255, 255, 0.5); */
+  /* color: var(--c-text-3); */
   font-size: 1.35rem;
 }
 
@@ -33,13 +33,13 @@ ul li::before {
   font-weight: bold;
   margin-right: 5px;
 
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--c-text-3);
 
   transition: color 0.08s ease-out;
 }
 
 ul li a {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--c-text-3);
 
   text-decoration: none;
   padding: 4px 0 4px 0;
@@ -50,7 +50,7 @@ ul li a {
 @media (hover: hover) {
   ul li:hover a,
   ul li:hover::before {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--c-text-2);
   }
 }
 
@@ -88,7 +88,7 @@ section img {
   border: none;
   border-radius: 8px;
 
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--c-text-3);
   background-color: rgba(31, 22, 22, 0.5);
   outline: 1px solid rgba(124, 124, 124, 0.15);
 

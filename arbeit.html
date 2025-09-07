@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arbeit & Archiv</title>
+    <title>Arbeit</title>
 
     <link rel="icon" type="image/x-icon" href="./img/icon/book.svg" />
 
@@ -13,7 +13,6 @@
 
     <link rel="stylesheet" href="stylesheets/section.css" />
     <link rel="stylesheet" href="stylesheets/arbeit.css" />
-    <link rel="stylesheet" href="stylesheets/archiv.css" />
   </head>
   <body>
     <div id="menuwrap">
@@ -38,12 +37,22 @@
             <a href="./arbeit.html">
               <div>
                 <img
+                  src="./img/icon/work.svg"
+                  aria-hidden="true"
+                  style="height: 26px; padding-right: 1px"
+                />
+              </div>
+              <p>Arbeit</p>
+            </a>
+            <a href="./archiv.html">
+              <div>
+                <img
                   src="./img/icon/book.svg"
                   aria-hidden="true"
                   style="height: 26px; padding-right: 1px"
                 />
               </div>
-              <p>Arbeit & Archiv</p>
+              <p>Archiv</p>
             </a>
             <a href="mailto:kontakt@peterpeusquens.com">
               <div>
@@ -84,7 +93,6 @@
       <section id="arbeit">
         <div class="sectionContainer">
           <div>
-            <!-- <img src="./img/icon/book.svg" /> -->
             <h2>Anzahl Transkribierter Urkunden</h2>
 
             <div class="arbeitListe">
@@ -369,11 +377,11 @@
         </div>
       </section>
 
-      <a id="archivButton" href="#archiv">
+      <!-- <a id="archivButton" href="#archiv">
         <h3>Archiv</h3>
-      </a>
+      </a> -->
 
-      <div id="archiv">
+      <!-- <div id="archiv">
         <div id="table">
           <div id="tableHead">
             <div>
@@ -416,7 +424,8 @@
             <div id="tableCategory5"></div>
           </div>
         </div>
-      </div>
+      </div> -->
+
       <div id="legalLink">
         <a href="impressum.html"><p>Impressum</p></a>
         <a href="datenschutz.html"><p>Datenschutz</p></a>
@@ -435,9 +444,7 @@
       <img src="img/pic/background.webp" />
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="scripts/global.js"></script>
     <script src="scripts/arbeit.js"></script>
-    <script src="scripts/archiv.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
   setTimeout(function () {
     const lightBeam = document.getElementById("light");
-    lightBeam.classList.remove("light-off");
+    if (lightBeam) lightBeam.classList.remove("light-off");
   }, 300);
 });
 
